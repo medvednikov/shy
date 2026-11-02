@@ -123,3 +123,5 @@ here](https://github.com/larpon/shy/blob/fb26741/cmd/complete.v#L11-L38).
 To enable game controller support shy needs to be built with
 SDL2 version >= 2.26.0 in addition to the compile flag `-d shy_gamepad`.
 
+Tagged asset sources accept a file path or embedded asset through `UntaggedAssetSource`.
+Nested tags are unsupported. This keeps the source layout finite when sum types are stored inline.

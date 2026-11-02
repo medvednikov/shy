@@ -115,10 +115,11 @@ pub fn (mut a Anims) update(dt f64) {
 			return
 		}
 
-		if animator.kind == .follow {
+		kind, running, paused, recycle := animator.state()
+		if kind == .follow {
 			animator.touch()
 		}
-		if !animator.running && !animator.recycle {
+		if !running && !recycle {
 			// TODO: move to inactive pool - measure if this is even all worth it.
 			// Doing this has some implications when the anim is restarted:
 			// we need (maybe expensive?) logic to detect and transfer the animator back into
@@ -134,7 +135,7 @@ pub fn (mut a Anims) update(dt f64) {
 			}
 			continue
 		}
-		if animator.paused {
+		if paused {
 			continue
 		}
 		animator.step(dt)
@@ -189,7 +190,7 @@ fn (mut a Anims) p_new_follow_animator[T](config FollowAnimatorConfig) &FollowAn
 }
 
 pub fn (mut a Anims) new_animator[T](config AnimatorConfig) &Animator[T] {
-	mut animator := &Animator[T](unsafe { nil }) // unsafe { nil }
+	mut animator := unsafe { &Animator[T](nil) }
 	$if T.typ is f32 {
 		if a.f32pool.len > 0 {
 			animator = a.f32pool.pop()
@@ -215,7 +216,7 @@ pub fn (mut a Anims) new_animator[T](config AnimatorConfig) &Animator[T] {
 }
 
 pub fn (mut a Anims) new_follow_animator[T](config FollowAnimatorConfig) &FollowAnimator[T] {
-	mut animator := &FollowAnimator[T](unsafe { nil }) // unsafe { nil }
+	mut animator := unsafe { &FollowAnimator[T](nil) }
 	/*
 	$if T.typ is f32 {
 		if a.f32pool.len > 0 {
@@ -234,11 +235,8 @@ pub fn (mut a Anims) new_follow_animator[T](config FollowAnimatorConfig) &Follow
 
 // IAnimator is what the Anims system can control
 interface IAnimator {
-	kind AnimatorKind
+	state() (AnimatorKind, bool, bool, bool)
 mut:
-	running bool
-	paused  bool // run()
-	recycle bool
 	step(f64)
 	touch()
 	restart()
@@ -478,4 +476,12 @@ fn (mut a FollowAnimator[T]) step(dt f64) {
 		}
 	}
 	a.prev_value = a.value
+}
+
+fn (a &Animator[T]) state() (AnimatorKind, bool, bool, bool) {
+	return a.kind, a.running, a.paused, a.recycle
+}
+
+fn (a &FollowAnimator[T]) state() (AnimatorKind, bool, bool, bool) {
+	return a.kind, a.running, a.paused, a.recycle
 }

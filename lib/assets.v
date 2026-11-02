@@ -335,16 +335,15 @@ pub fn (a &Assets) get[T](source AssetSource) (T, AssetGetStatus) {
 		return AssetRef{
 			asset: &a.error_asset
 		}, AssetGetStatus.error
-	}
-	// BUG:
-	// V BUG galore https://github.com/vlang/v/issues/21594
-	// $else $if T is &Asset {
-	// 	if asset := a.ass[source.str()] {
-	// 		return asset, AssetGetStatus.ok
-	// 	}
-	// 	return &a.error_asset, AssetGetStatus.error
-	// }
-	$else {
+	} $else {
+		// BUG:
+		// V BUG galore https://github.com/vlang/v/issues/21594
+		// $else $if T is &Asset {
+		// 	if asset := a.ass[source.str()] {
+		// 		return asset, AssetGetStatus.ok
+		// 	}
+		// 	return &a.error_asset, AssetGetStatus.error
+		// }
 		$compile_error('Asset.get[T]: only retreival of Blob, Image, Sound and &Asset is currently supported')
 	}
 	// Should not could be reached:
@@ -484,9 +483,20 @@ pub enum AssetStatus {
 	freed
 }
 
+// UntaggedAssetSource identifies a file or embedded asset without a tag.
+pub type UntaggedAssetSource = embed_file.EmbedFileData | string
+
+// str returns the file path of an untagged asset source.
+pub fn (source UntaggedAssetSource) str() string {
+	return match source {
+		string { source }
+		embed_file.EmbedFileData { source.path }
+	}
+}
+
 pub struct TaggedSource {
 pub:
-	source AssetSource
+	source UntaggedAssetSource
 	tag    string
 }
 
@@ -497,9 +507,6 @@ pub fn (ts TaggedSource) str() string {
 		}
 		embed_file.EmbedFileData {
 			ts.source.path
-		}
-		TaggedSource {
-			panic('${@STRUCT} does not support recursive tagged sources')
 		}
 	}
 }
@@ -720,13 +727,13 @@ fn (mut a Asset) to_image(opt ImageOptions) !Image {
 	}
 
 	mut image := Image{
-		asset:   a
-		opt:     opt
-		width:   stb_img.width
-		height:  stb_img.height
-		mipmaps: opt.mipmaps
-		ready:   stb_img.ok
-		kind:    .png // TODO: stb_img.ext
+		asset:    a
+		opt:      opt
+		width:    stb_img.width
+		height:   stb_img.height
+		mipmaps:  opt.mipmaps
+		ready:    stb_img.ok
+		kind:     .png // TODO: stb_img.ext
 		//
 		channels: stb_img.use_channels
 	}
@@ -734,9 +741,9 @@ fn (mut a Asset) to_image(opt ImageOptions) !Image {
 	// Sokol image
 	// eprintln('\n init sokol image ${img.path} ok=${img.sg_image_ok}')
 	mut img_desc := gfx.ImageDesc{
-		width:       image.width
-		height:      image.height
-		num_mipmaps: 0 // TODO: image.mipmaps
+		width:        image.width
+		height:       image.height
+		num_mipmaps:  0 // TODO: image.mipmaps
 		// label: &u8(0)
 		pixel_format: .rgba8
 	}
@@ -749,10 +756,10 @@ fn (mut a Asset) to_image(opt ImageOptions) !Image {
 	}
 
 	// println('${image.width} x ${image.height} x ${image.channels} --- ${a.data.len}')
-	// println('${usize(4 * image.width * image.height)} vs ${a.data.len}')
+	// println('${uint(4 * image.width * image.height)} vs ${a.data.len}')
 	img_desc.data.subimage[0][0] = gfx.Range{
 		ptr:  stb_img.data
-		size: usize(4 * image.width * image.height) // NOTE: 4 is not always equal to image.channels count, but sokol_gl contexts expect it
+		size: uint(4 * image.width * image.height) // NOTE: 4 is not always equal to image.channels count, but sokol_gl contexts expect it
 	}
 
 	image.gfx_image = gfx.make_image(&img_desc)

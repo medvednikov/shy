@@ -191,7 +191,7 @@ pub fn (mut e Events) send(ev Event) ! {
 	analyse.max('${@MOD}.${@STRUCT}.queue.len', e.queue.len + 1)
 	if e.state == .record {
 		window := e.shy.window(ev.window_id) or {
-			return error('${@STRUCT}.${@FN}: could not get window (${ev.window_id}): ${err}')
+			return error('${@STRUCT}.${@FN}: could not get window (${ev.window_id})')
 		}
 		e.recorded << RecordedEvent{
 			event: ev

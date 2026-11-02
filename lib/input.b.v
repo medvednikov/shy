@@ -4,6 +4,7 @@
 module lib
 
 import sdl
+
 // import manymouse as mm
 
 // TODO: move
@@ -165,9 +166,9 @@ fn (ip Input) sdl_to_shy_event(sdl_event sdl.Event) Event {
 					timestamp: timestamp
 					window_id: no_window
 					//
-					which: sdl_event.caxis.which
-					axis:  GamepadAxis.from_sdl_controller_axis(unsafe { sdl.GameControllerAxis(sdl_event.caxis.axis) })
-					value: sdl_event.caxis.value
+					which:     sdl_event.caxis.which
+					axis:      GamepadAxis.from_sdl_controller_axis(unsafe { sdl.GameControllerAxis(sdl_event.caxis.axis) })
+					value:     sdl_event.caxis.value
 				}
 			}
 			.controllerbuttondown {
@@ -175,9 +176,9 @@ fn (ip Input) sdl_to_shy_event(sdl_event sdl.Event) Event {
 					timestamp: timestamp
 					window_id: no_window
 					//
-					button: GamepadButton.from_sdl_controller_button(unsafe { sdl.GameControllerButton(sdl_event.cbutton.button) })
-					which:  sdl_event.cbutton.which
-					state:  .down
+					button:    GamepadButton.from_sdl_controller_button(unsafe { sdl.GameControllerButton(sdl_event.cbutton.button) })
+					which:     sdl_event.cbutton.which
+					state:     .down
 				}
 			}
 			.controllerbuttonup {
@@ -185,9 +186,9 @@ fn (ip Input) sdl_to_shy_event(sdl_event sdl.Event) Event {
 					timestamp: timestamp
 					window_id: no_window
 					//
-					button: GamepadButton.from_sdl_controller_button(unsafe { sdl.GameControllerButton(sdl_event.cbutton.button) })
-					which:  sdl_event.cbutton.which
-					state:  .up
+					button:    GamepadButton.from_sdl_controller_button(unsafe { sdl.GameControllerButton(sdl_event.cbutton.button) })
+					which:     sdl_event.cbutton.which
+					state:     .up
 				}
 			}
 			.controllerdeviceadded {
@@ -277,10 +278,10 @@ fn (ip Input) sdl_to_shy_event(sdl_event sdl.Event) Event {
 			win := s.window(shy_window_id) or {
 				// TODO: find out why the following shows up with `sdl_compat` only?
 				$if !sdl_compat ? {
-					s.log.gerror('${@STRUCT}.${@FN}', 'unable to locate SDL/Shy window ${sdl_event.window.windowID}/${shy_window_id}: ${err}')
+					s.log.gerror('${@STRUCT}.${@FN}', 'unable to locate SDL/Shy window ${sdl_event.window.windowID}/${shy_window_id}')
 					s.log.gwarn('${@STRUCT}.${@FN}', 'dropping handling of window event ${sdl_event.window.windowID}/${shy_window_id}, returning unknown...')
 				}
-				// panic('${@STRUCT}.${@FN} unable locate SDL/Shy window ${sdl_event.window.windowID}/${shy_window_id}: ${err}')
+				// panic('${@STRUCT}.${@FN} unable locate SDL/Shy window ${sdl_event.window.windowID}/${shy_window_id}')
 				return shy_event
 			}
 
@@ -447,7 +448,7 @@ fn (ip Input) sdl_to_shy_event(sdl_event sdl.Event) Event {
 			} else {
 				.flipped
 			}
-			mouse := ip.mouse(default_mouse_id) or { panic(err) }
+			mouse := ip.mouse(default_mouse_id) or { panic('default mouse not found') }
 			shy_window_id := Window.map_sdl_window_id_to_shy_window_id(sdl_event.wheel.windowID)
 			shy_event = MouseWheelEvent{
 				timestamp: timestamp

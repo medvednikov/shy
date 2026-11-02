@@ -106,7 +106,7 @@ fn (ip Input) deserialize_event_from_string(serialized_string string, format Eve
 	event_type := split[2]
 	timestamp := split[1].u64()
 	window_id := ip.shy.window(split[0].u32()) or {
-		ip.shy.log.gcritical('${@STRUCT}.${@FN}', 'no window with id ${split[0]}. Error: ${err.msg()}')
+		ip.shy.log.gcritical('${@STRUCT}.${@FN}', 'no window with id ${split[0]}')
 		return empty_event
 	}.id
 
@@ -172,10 +172,10 @@ fn (ip Input) deserialize_event_from_string(serialized_string string, format Eve
 				window_id: window_id
 				which:     split[offset].u8()
 				// buttons: MouseButtons.from_string(split[offset+3]) or { MouseButtons.unknown } // TODO
-				x:     split[offset + 1].int()
-				y:     split[offset + 2].int()
-				rel_x: split[offset + 3].int()
-				rel_y: split[offset + 4].int()
+				x:         split[offset + 1].int()
+				y:         split[offset + 2].int()
+				rel_x:     split[offset + 3].int()
+				rel_y:     split[offset + 4].int()
 			}
 		}
 		'MouseWheelEvent' {

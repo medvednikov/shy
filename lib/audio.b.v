@@ -157,7 +157,7 @@ fn (mut ae AudioEngine) load_bytes(bytes []u8) !&ma.Sound {
 	decoder_config := ma.decoder_config_init(.f32, 2, 44100)
 	// Init decoder
 	decoder := &ma.Decoder{}
-	if ma.decoder_init_memory(bytes.data, usize(bytes.len), &decoder_config, decoder) != .success {
+	if ma.decoder_init_memory(bytes.data, uint(bytes.len), &decoder_config, decoder) != .success {
 		return error('${@STRUCT}.${@FN} failed to initialize decoder from memory data, maybe the format is not supported')
 	}
 

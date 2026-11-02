@@ -88,7 +88,10 @@ pub fn (mut fa FrameAnimator) add_sequence(sequence FrameSequence) {
 
 	mut cumulative_weight := f32(0)
 	mut total_weight := f32(0)
-	mut seq := sequence
+	mut seq := FrameSequence{
+		...sequence
+		to_cumulative: sequence.to_cumulative.clone()
+	}
 	for tag, weight in seq.to {
 		total_weight += weight
 

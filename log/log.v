@@ -139,7 +139,7 @@ pub fn (l &Log) has(flags Flag) bool {
 }
 
 pub fn (l &Log) set(flags Flag) {
-	unsafe { l.flags.set(flags) }
+	unsafe { l.flags = l.flags | flags }
 }
 
 pub fn (l &Log) clear_and_set(flags Flag) {

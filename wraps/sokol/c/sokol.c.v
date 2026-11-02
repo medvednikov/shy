@@ -1,6 +1,8 @@
 // Copyright(C) 2022 Lars Pontoppidan. All rights reserved.
 module c
 
+import shy.wraps.fontstash as _
+
 #flag -I @VMODROOT/thirdparty/sokol
 #flag -I @VMODROOT/thirdparty/sokol/util
 
@@ -9,6 +11,7 @@ module c
 #flag linux -lX11 -lGL
 #flag freebsd -L/usr/local/lib -lX11 -lGL
 #flag openbsd -L/usr/X11R6/lib -lX11 -lGL
+
 // #flag windows -lgdi32
 
 // Note that -lm is needed *only* for sokol_gl.h's usage of sqrtf(),

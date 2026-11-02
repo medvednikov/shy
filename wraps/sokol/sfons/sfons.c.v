@@ -25,7 +25,7 @@ sfonst_allocator_t
 struct C.sfons_allocator_t {
 	// void* (*alloc)(size_t size, void* user_data);
 	alloc_fn memory.FnAllocatorAlloc
-	// alloc fn (size usize, user_data voidptr) voidptr
+	// alloc fn (size uint, user_data voidptr) voidptr
 	// void (*free)(void* ptr, void* user_data);
 	free_fn memory.FnAllocatorFree
 	// free      fn (ptr voidptr, user_data voidptr)

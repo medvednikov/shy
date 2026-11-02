@@ -114,145 +114,145 @@ pub const simd_alignment = 32
 
 // LogLevel is C.ma_log_level
 pub enum LogLevel {
-	debug   = C.MA_LOG_LEVEL_DEBUG   // 4,
-	info    = C.MA_LOG_LEVEL_INFO    // 3,
+	debug   = C.MA_LOG_LEVEL_DEBUG // 4,
+	info    = C.MA_LOG_LEVEL_INFO // 3,
 	warning = C.MA_LOG_LEVEL_WARNING // 2,
-	error   = C.MA_LOG_LEVEL_ERROR   // 1,
+	error   = C.MA_LOG_LEVEL_ERROR // 1,
 }
 
 // ChannelPosition is C._ma_channel_position
 pub enum ChannelPosition {
-	@none              = C.MA_CHANNEL_NONE               // 0,
-	mono               = C.MA_CHANNEL_MONO               // 1,
-	front_left         = C.MA_CHANNEL_FRONT_LEFT         // 2,
-	front_right        = C.MA_CHANNEL_FRONT_RIGHT        // 3,
-	front_center       = C.MA_CHANNEL_FRONT_CENTER       // 4,
-	lfe                = C.MA_CHANNEL_LFE                // 5,
-	back_left          = C.MA_CHANNEL_BACK_LEFT          // 6,
-	back_right         = C.MA_CHANNEL_BACK_RIGHT         // 7,
-	front_left_center  = C.MA_CHANNEL_FRONT_LEFT_CENTER  // 8,
+	@none              = C.MA_CHANNEL_NONE // 0,
+	mono               = C.MA_CHANNEL_MONO // 1,
+	front_left         = C.MA_CHANNEL_FRONT_LEFT // 2,
+	front_right        = C.MA_CHANNEL_FRONT_RIGHT // 3,
+	front_center       = C.MA_CHANNEL_FRONT_CENTER // 4,
+	lfe                = C.MA_CHANNEL_LFE // 5,
+	back_left          = C.MA_CHANNEL_BACK_LEFT // 6,
+	back_right         = C.MA_CHANNEL_BACK_RIGHT // 7,
+	front_left_center  = C.MA_CHANNEL_FRONT_LEFT_CENTER // 8,
 	front_right_center = C.MA_CHANNEL_FRONT_RIGHT_CENTER // 9,
-	back_center        = C.MA_CHANNEL_BACK_CENTER        // 10,
-	side_left          = C.MA_CHANNEL_SIDE_LEFT          // 11,
-	side_right         = C.MA_CHANNEL_SIDE_RIGHT         // 12,
-	top_center         = C.MA_CHANNEL_TOP_CENTER         // 13,
-	top_front_left     = C.MA_CHANNEL_TOP_FRONT_LEFT     // 14,
-	top_front_center   = C.MA_CHANNEL_TOP_FRONT_CENTER   // 15,
-	top_front_right    = C.MA_CHANNEL_TOP_FRONT_RIGHT    // 16,
-	top_back_left      = C.MA_CHANNEL_TOP_BACK_LEFT      // 17,
-	top_back_center    = C.MA_CHANNEL_TOP_BACK_CENTER    // 18,
-	top_back_right     = C.MA_CHANNEL_TOP_BACK_RIGHT     // 19,
-	aux_0              = C.MA_CHANNEL_AUX_0              // 20,
-	aux_1              = C.MA_CHANNEL_AUX_1              // 21,
-	aux_2              = C.MA_CHANNEL_AUX_2              // 22,
-	aux_3              = C.MA_CHANNEL_AUX_3              // 23,
-	aux_4              = C.MA_CHANNEL_AUX_4              // 24,
-	aux_5              = C.MA_CHANNEL_AUX_5              // 25,
-	aux_6              = C.MA_CHANNEL_AUX_6              // 26,
-	aux_7              = C.MA_CHANNEL_AUX_7              // 27,
-	aux_8              = C.MA_CHANNEL_AUX_8              // 28,
-	aux_9              = C.MA_CHANNEL_AUX_9              // 29,
-	aux_10             = C.MA_CHANNEL_AUX_10             // 30,
-	aux_11             = C.MA_CHANNEL_AUX_11             // 31,
-	aux_12             = C.MA_CHANNEL_AUX_12             // 32,
-	aux_13             = C.MA_CHANNEL_AUX_13             // 33,
-	aux_14             = C.MA_CHANNEL_AUX_14             // 34,
-	aux_15             = C.MA_CHANNEL_AUX_15             // 35,
-	aux_16             = C.MA_CHANNEL_AUX_16             // 36,
-	aux_17             = C.MA_CHANNEL_AUX_17             // 37,
-	aux_18             = C.MA_CHANNEL_AUX_18             // 38,
-	aux_19             = C.MA_CHANNEL_AUX_19             // 39,
-	aux_20             = C.MA_CHANNEL_AUX_20             // 40,
-	aux_21             = C.MA_CHANNEL_AUX_21             // 41,
-	aux_22             = C.MA_CHANNEL_AUX_22             // 42,
-	aux_23             = C.MA_CHANNEL_AUX_23             // 43,
-	aux_24             = C.MA_CHANNEL_AUX_24             // 44,
-	aux_25             = C.MA_CHANNEL_AUX_25             // 45,
-	aux_26             = C.MA_CHANNEL_AUX_26             // 46,
-	aux_27             = C.MA_CHANNEL_AUX_27             // 47,
-	aux_28             = C.MA_CHANNEL_AUX_28             // 48,
-	aux_29             = C.MA_CHANNEL_AUX_29             // 49,
-	aux_30             = C.MA_CHANNEL_AUX_30             // 50,
-	aux_31             = C.MA_CHANNEL_AUX_31             // 51,
-	left               = C.MA_CHANNEL_LEFT               // MA_CHANNEL_FRONT_LEFT,
-	right              = C.MA_CHANNEL_RIGHT              // MA_CHANNEL_FRONT_RIGHT,
-	position_count     = C.MA_CHANNEL_POSITION_COUNT     // (MA_CHANNEL_AUX_31 + 1),
+	back_center        = C.MA_CHANNEL_BACK_CENTER // 10,
+	side_left          = C.MA_CHANNEL_SIDE_LEFT // 11,
+	side_right         = C.MA_CHANNEL_SIDE_RIGHT // 12,
+	top_center         = C.MA_CHANNEL_TOP_CENTER // 13,
+	top_front_left     = C.MA_CHANNEL_TOP_FRONT_LEFT // 14,
+	top_front_center   = C.MA_CHANNEL_TOP_FRONT_CENTER // 15,
+	top_front_right    = C.MA_CHANNEL_TOP_FRONT_RIGHT // 16,
+	top_back_left      = C.MA_CHANNEL_TOP_BACK_LEFT // 17,
+	top_back_center    = C.MA_CHANNEL_TOP_BACK_CENTER // 18,
+	top_back_right     = C.MA_CHANNEL_TOP_BACK_RIGHT // 19,
+	aux_0              = C.MA_CHANNEL_AUX_0 // 20,
+	aux_1              = C.MA_CHANNEL_AUX_1 // 21,
+	aux_2              = C.MA_CHANNEL_AUX_2 // 22,
+	aux_3              = C.MA_CHANNEL_AUX_3 // 23,
+	aux_4              = C.MA_CHANNEL_AUX_4 // 24,
+	aux_5              = C.MA_CHANNEL_AUX_5 // 25,
+	aux_6              = C.MA_CHANNEL_AUX_6 // 26,
+	aux_7              = C.MA_CHANNEL_AUX_7 // 27,
+	aux_8              = C.MA_CHANNEL_AUX_8 // 28,
+	aux_9              = C.MA_CHANNEL_AUX_9 // 29,
+	aux_10             = C.MA_CHANNEL_AUX_10 // 30,
+	aux_11             = C.MA_CHANNEL_AUX_11 // 31,
+	aux_12             = C.MA_CHANNEL_AUX_12 // 32,
+	aux_13             = C.MA_CHANNEL_AUX_13 // 33,
+	aux_14             = C.MA_CHANNEL_AUX_14 // 34,
+	aux_15             = C.MA_CHANNEL_AUX_15 // 35,
+	aux_16             = C.MA_CHANNEL_AUX_16 // 36,
+	aux_17             = C.MA_CHANNEL_AUX_17 // 37,
+	aux_18             = C.MA_CHANNEL_AUX_18 // 38,
+	aux_19             = C.MA_CHANNEL_AUX_19 // 39,
+	aux_20             = C.MA_CHANNEL_AUX_20 // 40,
+	aux_21             = C.MA_CHANNEL_AUX_21 // 41,
+	aux_22             = C.MA_CHANNEL_AUX_22 // 42,
+	aux_23             = C.MA_CHANNEL_AUX_23 // 43,
+	aux_24             = C.MA_CHANNEL_AUX_24 // 44,
+	aux_25             = C.MA_CHANNEL_AUX_25 // 45,
+	aux_26             = C.MA_CHANNEL_AUX_26 // 46,
+	aux_27             = C.MA_CHANNEL_AUX_27 // 47,
+	aux_28             = C.MA_CHANNEL_AUX_28 // 48,
+	aux_29             = C.MA_CHANNEL_AUX_29 // 49,
+	aux_30             = C.MA_CHANNEL_AUX_30 // 50,
+	aux_31             = C.MA_CHANNEL_AUX_31 // 51,
+	left               = C.MA_CHANNEL_LEFT // MA_CHANNEL_FRONT_LEFT,
+	right              = C.MA_CHANNEL_RIGHT // MA_CHANNEL_FRONT_RIGHT,
+	position_count     = C.MA_CHANNEL_POSITION_COUNT // (MA_CHANNEL_AUX_31 + 1),
 }
 
 // Result is C.ma_result
 pub enum Result {
-	success                       = C.MA_SUCCESS                       // 0,
-	error                         = C.MA_ERROR                         // -1, A generic error.
-	invalid_args                  = C.MA_INVALID_ARGS                  // -2,
-	invalid_operation             = C.MA_INVALID_OPERATION             // -3,
-	out_of_memory                 = C.MA_OUT_OF_MEMORY                 // -4,
-	out_of_range                  = C.MA_OUT_OF_RANGE                  // -5,
-	access_denied                 = C.MA_ACCESS_DENIED                 // -6,
-	does_not_exist                = C.MA_DOES_NOT_EXIST                // -7,
-	already_exists                = C.MA_ALREADY_EXISTS                // -8,
-	too_many_open_files           = C.MA_TOO_MANY_OPEN_FILES           // -9,
-	invalid_file                  = C.MA_INVALID_FILE                  // -10,
-	too_big                       = C.MA_TOO_BIG                       // -11,
-	path_too_long                 = C.MA_PATH_TOO_LONG                 // -12,
-	name_too_long                 = C.MA_NAME_TOO_LONG                 // -13,
-	not_directory                 = C.MA_NOT_DIRECTORY                 // -14,
-	is_directory                  = C.MA_IS_DIRECTORY                  // -15,
-	directory_not_empty           = C.MA_DIRECTORY_NOT_EMPTY           // -16,
-	at_end                        = C.MA_AT_END                        // -17,
-	no_space                      = C.MA_NO_SPACE                      // -18,
-	busy                          = C.MA_BUSY                          // -19,
-	io_error                      = C.MA_IO_ERROR                      // -20,
-	interrupt                     = C.MA_INTERRUPT                     // -21,
-	unavailable                   = C.MA_UNAVAILABLE                   // -22,
-	already_in_use                = C.MA_ALREADY_IN_USE                // -23,
-	bad_address                   = C.MA_BAD_ADDRESS                   // -24,
-	bad_seek                      = C.MA_BAD_SEEK                      // -25,
-	bad_pipe                      = C.MA_BAD_PIPE                      // -26,
-	deadlock                      = C.MA_DEADLOCK                      // -27,
-	too_many_links                = C.MA_TOO_MANY_LINKS                // -28,
-	not_implemented               = C.MA_NOT_IMPLEMENTED               // -29,
-	no_message                    = C.MA_NO_MESSAGE                    // -30,
-	bad_message                   = C.MA_BAD_MESSAGE                   // -31,
-	no_data_available             = C.MA_NO_DATA_AVAILABLE             // -32,
-	invalid_data                  = C.MA_INVALID_DATA                  // -33,
-	timeout                       = C.MA_TIMEOUT                       // -34,
-	no_network                    = C.MA_NO_NETWORK                    // -35,
-	not_unique                    = C.MA_NOT_UNIQUE                    // -36,
-	not_socket                    = C.MA_NOT_SOCKET                    // -37,
-	no_address                    = C.MA_NO_ADDRESS                    // -38,
-	bad_protocol                  = C.MA_BAD_PROTOCOL                  // -39,
-	protocol_unavailable          = C.MA_PROTOCOL_UNAVAILABLE          // -40,
-	protocol_not_supported        = C.MA_PROTOCOL_NOT_SUPPORTED        // -41,
+	success                       = C.MA_SUCCESS // 0,
+	error                         = C.MA_ERROR // -1, A generic error.
+	invalid_args                  = C.MA_INVALID_ARGS // -2,
+	invalid_operation             = C.MA_INVALID_OPERATION // -3,
+	out_of_memory                 = C.MA_OUT_OF_MEMORY // -4,
+	out_of_range                  = C.MA_OUT_OF_RANGE // -5,
+	access_denied                 = C.MA_ACCESS_DENIED // -6,
+	does_not_exist                = C.MA_DOES_NOT_EXIST // -7,
+	already_exists                = C.MA_ALREADY_EXISTS // -8,
+	too_many_open_files           = C.MA_TOO_MANY_OPEN_FILES // -9,
+	invalid_file                  = C.MA_INVALID_FILE // -10,
+	too_big                       = C.MA_TOO_BIG // -11,
+	path_too_long                 = C.MA_PATH_TOO_LONG // -12,
+	name_too_long                 = C.MA_NAME_TOO_LONG // -13,
+	not_directory                 = C.MA_NOT_DIRECTORY // -14,
+	is_directory                  = C.MA_IS_DIRECTORY // -15,
+	directory_not_empty           = C.MA_DIRECTORY_NOT_EMPTY // -16,
+	at_end                        = C.MA_AT_END // -17,
+	no_space                      = C.MA_NO_SPACE // -18,
+	busy                          = C.MA_BUSY // -19,
+	io_error                      = C.MA_IO_ERROR // -20,
+	interrupt                     = C.MA_INTERRUPT // -21,
+	unavailable                   = C.MA_UNAVAILABLE // -22,
+	already_in_use                = C.MA_ALREADY_IN_USE // -23,
+	bad_address                   = C.MA_BAD_ADDRESS // -24,
+	bad_seek                      = C.MA_BAD_SEEK // -25,
+	bad_pipe                      = C.MA_BAD_PIPE // -26,
+	deadlock                      = C.MA_DEADLOCK // -27,
+	too_many_links                = C.MA_TOO_MANY_LINKS // -28,
+	not_implemented               = C.MA_NOT_IMPLEMENTED // -29,
+	no_message                    = C.MA_NO_MESSAGE // -30,
+	bad_message                   = C.MA_BAD_MESSAGE // -31,
+	no_data_available             = C.MA_NO_DATA_AVAILABLE // -32,
+	invalid_data                  = C.MA_INVALID_DATA // -33,
+	timeout                       = C.MA_TIMEOUT // -34,
+	no_network                    = C.MA_NO_NETWORK // -35,
+	not_unique                    = C.MA_NOT_UNIQUE // -36,
+	not_socket                    = C.MA_NOT_SOCKET // -37,
+	no_address                    = C.MA_NO_ADDRESS // -38,
+	bad_protocol                  = C.MA_BAD_PROTOCOL // -39,
+	protocol_unavailable          = C.MA_PROTOCOL_UNAVAILABLE // -40,
+	protocol_not_supported        = C.MA_PROTOCOL_NOT_SUPPORTED // -41,
 	protocol_family_not_supported = C.MA_PROTOCOL_FAMILY_NOT_SUPPORTED // -42,
-	address_family_not_supported  = C.MA_ADDRESS_FAMILY_NOT_SUPPORTED  // -43,
-	socket_not_supported          = C.MA_SOCKET_NOT_SUPPORTED          // -44,
-	connection_reset              = C.MA_CONNECTION_RESET              // -45,
-	already_connected             = C.MA_ALREADY_CONNECTED             // -46,
-	not_connected                 = C.MA_NOT_CONNECTED                 // -47,
-	connection_refused            = C.MA_CONNECTION_REFUSED            // -48,
-	no_host                       = C.MA_NO_HOST                       // -49,
-	in_progress                   = C.MA_IN_PROGRESS                   // -50,
-	cancelled                     = C.MA_CANCELLED                     // -51,
-	memory_already_mapped         = C.MA_MEMORY_ALREADY_MAPPED         // -52,
+	address_family_not_supported  = C.MA_ADDRESS_FAMILY_NOT_SUPPORTED // -43,
+	socket_not_supported          = C.MA_SOCKET_NOT_SUPPORTED // -44,
+	connection_reset              = C.MA_CONNECTION_RESET // -45,
+	already_connected             = C.MA_ALREADY_CONNECTED // -46,
+	not_connected                 = C.MA_NOT_CONNECTED // -47,
+	connection_refused            = C.MA_CONNECTION_REFUSED // -48,
+	no_host                       = C.MA_NO_HOST // -49,
+	in_progress                   = C.MA_IN_PROGRESS // -50,
+	cancelled                     = C.MA_CANCELLED // -51,
+	memory_already_mapped         = C.MA_MEMORY_ALREADY_MAPPED // -52,
 	// -100, General miniaudio-specific errors.
 	format_not_supported      = C.MA_FORMAT_NOT_SUPPORTED
 	device_type_not_supported = C.MA_DEVICE_TYPE_NOT_SUPPORTED // -101,
-	share_mode_not_supported  = C.MA_SHARE_MODE_NOT_SUPPORTED  // -102,
-	no_backend                = C.MA_NO_BACKEND                // -103,
-	no_device                 = C.MA_NO_DEVICE                 // -104,
-	api_not_found             = C.MA_API_NOT_FOUND             // -105,
-	invalid_device_config     = C.MA_INVALID_DEVICE_CONFIG     // -106,
-	loop                      = C.MA_LOOP                      // -107,
+	share_mode_not_supported  = C.MA_SHARE_MODE_NOT_SUPPORTED // -102,
+	no_backend                = C.MA_NO_BACKEND // -103,
+	no_device                 = C.MA_NO_DEVICE // -104,
+	api_not_found             = C.MA_API_NOT_FOUND // -105,
+	invalid_device_config     = C.MA_INVALID_DEVICE_CONFIG // -106,
+	loop                      = C.MA_LOOP // -107,
 	// -200, State errors.
 	device_not_initialized     = C.MA_DEVICE_NOT_INITIALIZED
 	device_already_initialized = C.MA_DEVICE_ALREADY_INITIALIZED // -201,
-	device_not_started         = C.MA_DEVICE_NOT_STARTED         // -202,
-	device_not_stopped         = C.MA_DEVICE_NOT_STOPPED         // -203,
+	device_not_started         = C.MA_DEVICE_NOT_STARTED // -202,
+	device_not_stopped         = C.MA_DEVICE_NOT_STOPPED // -203,
 	// -300, Operation errors.
 	failed_to_init_backend         = C.MA_FAILED_TO_INIT_BACKEND
-	failed_to_open_backend_device  = C.MA_FAILED_TO_OPEN_BACKEND_DEVICE  // -301,
+	failed_to_open_backend_device  = C.MA_FAILED_TO_OPEN_BACKEND_DEVICE // -301,
 	failed_to_start_backend_device = C.MA_FAILED_TO_START_BACKEND_DEVICE // -302,
-	failed_to_stop_backend_device  = C.MA_FAILED_TO_STOP_BACKEND_DEVICE  // -303,
+	failed_to_stop_backend_device  = C.MA_FAILED_TO_STOP_BACKEND_DEVICE // -303,
 }
 
 pub const min_channels = 1
@@ -282,41 +282,41 @@ pub enum DitherMode {
 // Format is C.ma_format
 pub enum Format {
 	unknown = C.ma_format_unknown // 0, Mainly used for indicating an error, but also used as the default for the output format for decoders.
-	u8      = C.ma_format_u8      // 1,
-	s16     = C.ma_format_s16     // 2, Seems to be the most widely supported format.
-	s24     = C.ma_format_s24     // 3, Tightly packed. 3 bytes per sample.
-	s32     = C.ma_format_s32     // 4,
-	f32     = C.ma_format_f32     // 5,
+	u8      = C.ma_format_u8 // 1,
+	s16     = C.ma_format_s16 // 2, Seems to be the most widely supported format.
+	s24     = C.ma_format_s24 // 3, Tightly packed. 3 bytes per sample.
+	s32     = C.ma_format_s32 // 4,
+	f32     = C.ma_format_f32 // 5,
 	count   = C.ma_format_count
 }
 
 // StandardSampleRate is C.ma_standard_sample_rate
 pub enum StandardSampleRate {
-	_48000  = C.ma_standard_sample_rate_48000  // 48000, Most common
-	_44100  = C.ma_standard_sample_rate_44100  // 44100,
-	_32000  = C.ma_standard_sample_rate_32000  // 32000, Lows
-	_24000  = C.ma_standard_sample_rate_24000  // 24000,
-	_22050  = C.ma_standard_sample_rate_22050  // 22050,
-	_88200  = C.ma_standard_sample_rate_88200  // 88200, Highs
-	_96000  = C.ma_standard_sample_rate_96000  // 96000,
+	_48000  = C.ma_standard_sample_rate_48000 // 48000, Most common
+	_44100  = C.ma_standard_sample_rate_44100 // 44100,
+	_32000  = C.ma_standard_sample_rate_32000 // 32000, Lows
+	_24000  = C.ma_standard_sample_rate_24000 // 24000,
+	_22050  = C.ma_standard_sample_rate_22050 // 22050,
+	_88200  = C.ma_standard_sample_rate_88200 // 88200, Highs
+	_96000  = C.ma_standard_sample_rate_96000 // 96000,
 	_176400 = C.ma_standard_sample_rate_176400 // 176400,
 	_192000 = C.ma_standard_sample_rate_192000 // 192000,
-	_16000  = C.ma_standard_sample_rate_16000  // 16000, Extreme lows
-	_11025  = C.ma_standard_sample_rate_11025  // 11250,
-	_8000   = C.ma_standard_sample_rate_8000   // 8000,
+	_16000  = C.ma_standard_sample_rate_16000 // 16000, Extreme lows
+	_11025  = C.ma_standard_sample_rate_11025 // 11250,
+	_8000   = C.ma_standard_sample_rate_8000 // 8000,
 	_352800 = C.ma_standard_sample_rate_352800 // 352800, Extreme highs
 	_384000 = C.ma_standard_sample_rate_384000 // 384000,
-	min     = C.ma_standard_sample_rate_min    // ma_standard_sample_rate_8000,
-	max     = C.ma_standard_sample_rate_max    // ma_standard_sample_rate_384000,
-	count   = C.ma_standard_sample_rate_count  // 14, Need to maintain the count manually. Make sure this is updated if items are added to enum.
+	min     = C.ma_standard_sample_rate_min // ma_standard_sample_rate_8000,
+	max     = C.ma_standard_sample_rate_max // ma_standard_sample_rate_384000,
+	count   = C.ma_standard_sample_rate_count // 14, Need to maintain the count manually. Make sure this is updated if items are added to enum.
 }
 
 // ChannelMixMode is C.ma_channel_mix_mode
 pub enum ChannelMixMode {
-	rectangular    = C.ma_channel_mix_mode_rectangular    // 0, Simple averaging based on the plane(s) the channel is sitting on.
-	simple         = C.ma_channel_mix_mode_simple         // Drop excess channels; zeroed out extra channels.
+	rectangular    = C.ma_channel_mix_mode_rectangular // 0, Simple averaging based on the plane(s) the channel is sitting on.
+	simple         = C.ma_channel_mix_mode_simple // Drop excess channels; zeroed out extra channels.
 	custom_weights = C.ma_channel_mix_mode_custom_weights // Use custom weights specified in ma_channel_converter_config.
-	default        = C.ma_channel_mix_mode_default        // ma_channel_mix_mode_rectangular,
+	default        = C.ma_channel_mix_mode_default // ma_channel_mix_mode_rectangular,
 }
 
 // StandardChannelMap is C.ma_standard_channel_map
@@ -326,10 +326,10 @@ pub enum StandardChannelMap {
 	rfc3551   = C.ma_standard_channel_map_rfc3551 // Based off AIFF.
 	flac      = C.ma_standard_channel_map_flac
 	vorbis    = C.ma_standard_channel_map_vorbis
-	sound4    = C.ma_standard_channel_map_sound4   // FreeBSD's sound(4).
-	sndio     = C.ma_standard_channel_map_sndio    // www.sndio.org/tips.html
+	sound4    = C.ma_standard_channel_map_sound4 // FreeBSD's sound(4).
+	sndio     = C.ma_standard_channel_map_sndio // www.sndio.org/tips.html
 	webaudio  = C.ma_standard_channel_map_webaudio // ma_standard_channel_map_flac, https://webaudio.github.io/web-audio-api/#ChannelOrdering. Only 1, 2, 4 and 6 channels are defined, but can fill in the gaps with logical assumptions.
-	default   = C.ma_standard_channel_map_default  // ma_standard_channel_map_microsoft,
+	default   = C.ma_standard_channel_map_default // ma_standard_channel_map_microsoft,
 }
 
 // PerformanceProfile is C.ma_performance_profile
@@ -342,9 +342,9 @@ pub enum PerformanceProfile {
 struct C.ma_allocation_callbacks {
 pub mut:
 	pUserData voidptr
-	onMalloc  fn (sz usize, p_user_data voidptr) voidptr            // onMalloc)(size_t
-	onRealloc fn (p voidptr, sz usize, p_user_data voidptr) voidptr // onRealloc)(void*
-	onFree    fn (p voidptr, p_user_data voidptr)                   // onFree)(void*
+	onMalloc  fn (sz uint, p_user_data voidptr) voidptr            // onMalloc)(size_t
+	onRealloc fn (p voidptr, sz uint, p_user_data voidptr) voidptr // onRealloc)(void*
+	onFree    fn (p voidptr, p_user_data voidptr)                  // onFree)(void*
 }
 
 pub type AllocationCallbacks = C.ma_allocation_callbacks
@@ -359,14 +359,14 @@ pub type Lcg = C.ma_lcg
 
 // ThreadPriority is C.ma_thread_priority
 pub enum ThreadPriority {
-	idle     = C.ma_thread_priority_idle     // -5,
-	lowest   = C.ma_thread_priority_lowest   // -4,
-	low      = C.ma_thread_priority_low      // -3,
-	normal   = C.ma_thread_priority_normal   // -2,
-	high     = C.ma_thread_priority_high     // -1,
-	highest  = C.ma_thread_priority_highest  // 0,
+	idle     = C.ma_thread_priority_idle // -5,
+	lowest   = C.ma_thread_priority_lowest // -4,
+	low      = C.ma_thread_priority_low // -3,
+	normal   = C.ma_thread_priority_normal // -2,
+	high     = C.ma_thread_priority_high // -1,
+	highest  = C.ma_thread_priority_highest // 0,
 	realtime = C.ma_thread_priority_realtime // 1,
-	default  = C.ma_thread_priority_default  // 0,
+	default  = C.ma_thread_priority_default // 0,
 }
 
 /*
@@ -578,10 +578,10 @@ pub mut:
 pub type Biquad = C.ma_biquad
 
 // C: `MA_API ma_result ma_biquad_get_heap_size(const ma_biquad_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_biquad_get_heap_size(const_p_config &BiquadConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_biquad_get_heap_size(const_p_config &BiquadConfig, p_heap_size_in_bytes &uint) Result
 
 // biquad_get_heap_size is currently undocumented
-pub fn biquad_get_heap_size(const_p_config &BiquadConfig, p_heap_size_in_bytes &usize) Result {
+pub fn biquad_get_heap_size(const_p_config &BiquadConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_biquad_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -695,10 +695,10 @@ pub mut:
 pub type Lpf1 = C.ma_lpf1
 
 // C: `MA_API ma_result ma_lpf1_get_heap_size(const ma_lpf1_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_lpf1_get_heap_size(const_p_config &Lpf1Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_lpf1_get_heap_size(const_p_config &Lpf1Config, p_heap_size_in_bytes &uint) Result
 
 // lpf1_get_heap_size is currently undocumented
-pub fn lpf1_get_heap_size(const_p_config &Lpf1Config, p_heap_size_in_bytes &usize) Result {
+pub fn lpf1_get_heap_size(const_p_config &Lpf1Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_lpf1_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -767,10 +767,10 @@ pub mut:
 pub type Lpf2 = C.ma_lpf2
 
 // C: `MA_API ma_result ma_lpf2_get_heap_size(const ma_lpf2_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_lpf2_get_heap_size(const_p_config &Lpf2Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_lpf2_get_heap_size(const_p_config &Lpf2Config, p_heap_size_in_bytes &uint) Result
 
 // lpf2_get_heap_size is currently undocumented
-pub fn lpf2_get_heap_size(const_p_config &Lpf2Config, p_heap_size_in_bytes &usize) Result {
+pub fn lpf2_get_heap_size(const_p_config &Lpf2Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_lpf2_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -867,10 +867,10 @@ pub mut:
 pub type Lpf = C.ma_lpf
 
 // C: `MA_API ma_result ma_lpf_get_heap_size(const ma_lpf_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_lpf_get_heap_size(const_p_config &LpfConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_lpf_get_heap_size(const_p_config &LpfConfig, p_heap_size_in_bytes &uint) Result
 
 // lpf_get_heap_size is currently undocumented
-pub fn lpf_get_heap_size(const_p_config &LpfConfig, p_heap_size_in_bytes &usize) Result {
+pub fn lpf_get_heap_size(const_p_config &LpfConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_lpf_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -984,10 +984,10 @@ pub mut:
 pub type Hpf1 = C.ma_hpf1
 
 // C: `MA_API ma_result ma_hpf1_get_heap_size(const ma_hpf1_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_hpf1_get_heap_size(const_p_config &Hpf1Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_hpf1_get_heap_size(const_p_config &Hpf1Config, p_heap_size_in_bytes &uint) Result
 
 // hpf1_get_heap_size is currently undocumented
-pub fn hpf1_get_heap_size(const_p_config &Hpf1Config, p_heap_size_in_bytes &usize) Result {
+pub fn hpf1_get_heap_size(const_p_config &Hpf1Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_hpf1_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1048,10 +1048,10 @@ pub mut:
 pub type Hpf2 = C.ma_hpf2
 
 // C: `MA_API ma_result ma_hpf2_get_heap_size(const ma_hpf2_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_hpf2_get_heap_size(const_p_config &Hpf2Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_hpf2_get_heap_size(const_p_config &Hpf2Config, p_heap_size_in_bytes &uint) Result
 
 // hpf2_get_heap_size is currently undocumented
-pub fn hpf2_get_heap_size(const_p_config &Hpf2Config, p_heap_size_in_bytes &usize) Result {
+pub fn hpf2_get_heap_size(const_p_config &Hpf2Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_hpf2_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1140,10 +1140,10 @@ pub mut:
 pub type Hpf = C.ma_hpf
 
 // C: `MA_API ma_result ma_hpf_get_heap_size(const ma_hpf_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_hpf_get_heap_size(const_p_config &HpfConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_hpf_get_heap_size(const_p_config &HpfConfig, p_heap_size_in_bytes &uint) Result
 
 // hpf_get_heap_size is currently undocumented
-pub fn hpf_get_heap_size(const_p_config &HpfConfig, p_heap_size_in_bytes &usize) Result {
+pub fn hpf_get_heap_size(const_p_config &HpfConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_hpf_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1224,10 +1224,10 @@ pub mut:
 pub type Bpf2 = C.ma_bpf2
 
 // C: `MA_API ma_result ma_bpf2_get_heap_size(const ma_bpf2_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_bpf2_get_heap_size(const_p_config &Bpf2Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_bpf2_get_heap_size(const_p_config &Bpf2Config, p_heap_size_in_bytes &uint) Result
 
 // bpf2_get_heap_size is currently undocumented
-pub fn bpf2_get_heap_size(const_p_config &Bpf2Config, p_heap_size_in_bytes &usize) Result {
+pub fn bpf2_get_heap_size(const_p_config &Bpf2Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_bpf2_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1313,10 +1313,10 @@ pub mut:
 pub type Bpf = C.ma_bpf
 
 // C: `MA_API ma_result ma_bpf_get_heap_size(const ma_bpf_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_bpf_get_heap_size(const_p_config &BpfConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_bpf_get_heap_size(const_p_config &BpfConfig, p_heap_size_in_bytes &uint) Result
 
 // bpf_get_heap_size is currently undocumented
-pub fn bpf_get_heap_size(const_p_config &BpfConfig, p_heap_size_in_bytes &usize) Result {
+pub fn bpf_get_heap_size(const_p_config &BpfConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_bpf_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1409,10 +1409,10 @@ pub mut:
 pub type Notch2 = C.ma_notch2
 
 // C: `MA_API ma_result ma_notch2_get_heap_size(const ma_notch2_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_notch2_get_heap_size(const_p_config &Notch2Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_notch2_get_heap_size(const_p_config &Notch2Config, p_heap_size_in_bytes &uint) Result
 
 // notch2_get_heap_size is currently undocumented
-pub fn notch2_get_heap_size(const_p_config &Notch2Config, p_heap_size_in_bytes &usize) Result {
+pub fn notch2_get_heap_size(const_p_config &Notch2Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_notch2_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1507,10 +1507,10 @@ pub mut:
 pub type Peak2 = C.ma_peak2
 
 // C: `MA_API ma_result ma_peak2_get_heap_size(const ma_peak2_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_peak2_get_heap_size(const_p_config &Peak2Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_peak2_get_heap_size(const_p_config &Peak2Config, p_heap_size_in_bytes &uint) Result
 
 // peak2_get_heap_size is currently undocumented
-pub fn peak2_get_heap_size(const_p_config &Peak2Config, p_heap_size_in_bytes &usize) Result {
+pub fn peak2_get_heap_size(const_p_config &Peak2Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_peak2_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1606,10 +1606,10 @@ pub mut:
 pub type Loshelf2 = C.ma_loshelf2
 
 // C: `MA_API ma_result ma_loshelf2_get_heap_size(const ma_loshelf2_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_loshelf2_get_heap_size(const_p_config &Loshelf2Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_loshelf2_get_heap_size(const_p_config &Loshelf2Config, p_heap_size_in_bytes &uint) Result
 
 // loshelf2_get_heap_size is currently undocumented
-pub fn loshelf2_get_heap_size(const_p_config &Loshelf2Config, p_heap_size_in_bytes &usize) Result {
+pub fn loshelf2_get_heap_size(const_p_config &Loshelf2Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_loshelf2_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1706,10 +1706,10 @@ pub mut:
 pub type Hishelf2 = C.ma_hishelf2
 
 // C: `MA_API ma_result ma_hishelf2_get_heap_size(const ma_hishelf2_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_hishelf2_get_heap_size(const_p_config &Hishelf2Config, p_heap_size_in_bytes &usize) Result
+fn C.ma_hishelf2_get_heap_size(const_p_config &Hishelf2Config, p_heap_size_in_bytes &uint) Result
 
 // hishelf2_get_heap_size is currently undocumented
-pub fn hishelf2_get_heap_size(const_p_config &Hishelf2Config, p_heap_size_in_bytes &usize) Result {
+pub fn hishelf2_get_heap_size(const_p_config &Hishelf2Config, p_heap_size_in_bytes &uint) Result {
 	return C.ma_hishelf2_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1899,10 +1899,10 @@ pub mut:
 pub type Gainer = C.ma_gainer
 
 // C: `MA_API ma_result ma_gainer_get_heap_size(const ma_gainer_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_gainer_get_heap_size(const_p_config &GainerConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_gainer_get_heap_size(const_p_config &GainerConfig, p_heap_size_in_bytes &uint) Result
 
 // gainer_get_heap_size is currently undocumented
-pub fn gainer_get_heap_size(const_p_config &GainerConfig, p_heap_size_in_bytes &usize) Result {
+pub fn gainer_get_heap_size(const_p_config &GainerConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_gainer_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -1957,7 +1957,7 @@ pub fn gainer_set_gains(p_gainer &Gainer, p_new_gains &f32) Result {
 // PanMode is C.ma_pan_mode
 pub enum PanMode {
 	balance = C.ma_pan_mode_balance // 0, Does not blend one side with the other. Technically just a balance. Compatible with other popular audio engines and therefore the default.
-	pan     = C.ma_pan_mode_pan     // A true pan. The sound from one side will "move" to the other side and blend with it.
+	pan     = C.ma_pan_mode_pan // A true pan. The sound from one side will "move" to the other side and blend with it.
 }
 
 @[typedef]
@@ -2120,9 +2120,9 @@ pub type Vec3f = C.ma_vec3f
 
 // AttenuationModel is C.ma_attenuation_model
 pub enum AttenuationModel {
-	@none       = C.ma_attenuation_model_none        // No distance attenuation and no spatialization.
-	inverse     = C.ma_attenuation_model_inverse     // Equivalent to OpenAL's AL_INVERSE_DISTANCE_CLAMPED.
-	linear      = C.ma_attenuation_model_linear      // Linear attenuation. Equivalent to OpenAL's AL_LINEAR_DISTANCE_CLAMPED.
+	@none       = C.ma_attenuation_model_none // No distance attenuation and no spatialization.
+	inverse     = C.ma_attenuation_model_inverse // Equivalent to OpenAL's AL_INVERSE_DISTANCE_CLAMPED.
+	linear      = C.ma_attenuation_model_linear // Linear attenuation. Equivalent to OpenAL's AL_LINEAR_DISTANCE_CLAMPED.
 	exponential = C.ma_attenuation_model_exponential // Exponential attenuation. Equivalent to OpenAL's AL_EXPONENT_DISTANCE_CLAMPED.
 }
 
@@ -2176,10 +2176,10 @@ pub mut:
 pub type SpatializerListener = C.ma_spatializer_listener
 
 // C: `MA_API ma_result ma_spatializer_listener_get_heap_size(const ma_spatializer_listener_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_spatializer_listener_get_heap_size(const_p_config &SpatializerListenerConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_spatializer_listener_get_heap_size(const_p_config &SpatializerListenerConfig, p_heap_size_in_bytes &uint) Result
 
 // spatializer_listener_get_heap_size is currently undocumented
-pub fn spatializer_listener_get_heap_size(const_p_config &SpatializerListenerConfig, p_heap_size_in_bytes &usize) Result {
+pub fn spatializer_listener_get_heap_size(const_p_config &SpatializerListenerConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_spatializer_listener_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -2389,7 +2389,6 @@ pub mut:
 	gainer                       Gainer // For smooth gain transitions.
 	pNewChannelGainsOut          &f32 = unsafe { nil } // An offset of _pHeap. Used by ma_spatializer_process_pcm_frames() to store new channel gains. The number of elements in this array is equal to config.channelsOut.
 	// Memory management.
-
 	_pHeap    voidptr
 	_ownsHeap u32
 }
@@ -2397,10 +2396,10 @@ pub mut:
 pub type Spatializer = C.ma_spatializer
 
 // C: `MA_API ma_result ma_spatializer_get_heap_size(const ma_spatializer_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_spatializer_get_heap_size(const_p_config &SpatializerConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_spatializer_get_heap_size(const_p_config &SpatializerConfig, p_heap_size_in_bytes &uint) Result
 
 // spatializer_get_heap_size is currently undocumented
-pub fn spatializer_get_heap_size(const_p_config &SpatializerConfig, p_heap_size_in_bytes &usize) Result {
+pub fn spatializer_get_heap_size(const_p_config &SpatializerConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_spatializer_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -2713,10 +2712,10 @@ pub mut:
 pub type LinearResampler = C.ma_linear_resampler
 
 // C: `MA_API ma_result ma_linear_resampler_get_heap_size(const ma_linear_resampler_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_linear_resampler_get_heap_size(const_p_config &LinearResamplerConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_linear_resampler_get_heap_size(const_p_config &LinearResamplerConfig, p_heap_size_in_bytes &uint) Result
 
 // linear_resampler_get_heap_size is currently undocumented
-pub fn linear_resampler_get_heap_size(const_p_config &LinearResamplerConfig, p_heap_size_in_bytes &usize) Result {
+pub fn linear_resampler_get_heap_size(const_p_config &LinearResamplerConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_linear_resampler_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -2814,7 +2813,7 @@ pub fn linear_resampler_reset(p_resampler &LinearResampler) Result {
 @[typedef]
 struct C.ma_resampling_backend_vtable {
 pub mut:
-	onGetHeapSize                 fn (p_user_data voidptr, const_p_config &ResamplerConfig, p_heap_size_in_bytes &usize) Result        // onGetHeapSize
+	onGetHeapSize                 fn (p_user_data voidptr, const_p_config &ResamplerConfig, p_heap_size_in_bytes &uint) Result         // onGetHeapSize
 	onInit                        fn (p_user_data voidptr, const_p_config &ResamplerConfig, p_heap voidptr, pp_backend voidptr) Result // onInit
 	onUninit                      fn (p_user_data voidptr, p_backend voidptr, const_p_allocation_callbacks &AllocationCallbacks)       // onUninit
 	onProcess                     fn (p_user_data voidptr, p_backend voidptr, const_p_frames_in voidptr, p_frame_count_in &u64, p_frames_out voidptr, p_frame_count_out &u64) Result // onProcess
@@ -2872,7 +2871,6 @@ pub mut:
 	// TODO// union {
 	//  ma_linear_resampler linear; } state
 	// Memory management.
-
 	_pHeap    voidptr
 	_ownsHeap u32
 }
@@ -2880,10 +2878,10 @@ pub mut:
 pub type Resampler = C.ma_resampler
 
 // C: `MA_API ma_result ma_resampler_get_heap_size(const ma_resampler_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_resampler_get_heap_size(const_p_config &ResamplerConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_resampler_get_heap_size(const_p_config &ResamplerConfig, p_heap_size_in_bytes &uint) Result
 
 // resampler_get_heap_size is currently undocumented
-pub fn resampler_get_heap_size(const_p_config &ResamplerConfig, p_heap_size_in_bytes &usize) Result {
+pub fn resampler_get_heap_size(const_p_config &ResamplerConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_resampler_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -3009,17 +3007,17 @@ pub enum ChannelConversionPath {
 	unknown     = C.ma_channel_conversion_path_unknown
 	passthrough = C.ma_channel_conversion_path_passthrough
 	mono_out    = C.ma_channel_conversion_path_mono_out // Converting to mono.
-	mono_in     = C.ma_channel_conversion_path_mono_in  // Converting from mono.
-	shuffle     = C.ma_channel_conversion_path_shuffle  // Simple shuffle. Will use this when all channels are present in both input and output channel maps, but just in a different order.
-	weights     = C.ma_channel_conversion_path_weights  // Blended based on weights.
+	mono_in     = C.ma_channel_conversion_path_mono_in // Converting from mono.
+	shuffle     = C.ma_channel_conversion_path_shuffle // Simple shuffle. Will use this when all channels are present in both input and output channel maps, but just in a different order.
+	weights     = C.ma_channel_conversion_path_weights // Blended based on weights.
 }
 
 // MonoExpansionMode is C.ma_mono_expansion_mode
 pub enum MonoExpansionMode {
-	duplicate   = C.ma_mono_expansion_mode_duplicate   // 0, The default.
-	average     = C.ma_mono_expansion_mode_average     // Average the mono channel across all channels.
+	duplicate   = C.ma_mono_expansion_mode_duplicate // 0, The default.
+	average     = C.ma_mono_expansion_mode_average // Average the mono channel across all channels.
 	stereo_only = C.ma_mono_expansion_mode_stereo_only // Duplicate to the left and right channels only and ignore the others.
-	default     = C.ma_mono_expansion_mode_default     // ma_mono_expansion_mode_duplicate,
+	default     = C.ma_mono_expansion_mode_default // ma_mono_expansion_mode_duplicate,
 }
 
 @[typedef]
@@ -3060,7 +3058,6 @@ pub mut:
 	// TODO// union {
 	//  float** f32; ma_int32** s16; } weights
 	// Memory management.
-
 	_pHeap    voidptr
 	_ownsHeap u32
 }
@@ -3068,10 +3065,10 @@ pub mut:
 pub type ChannelConverter = C.ma_channel_converter
 
 // C: `MA_API ma_result ma_channel_converter_get_heap_size(const ma_channel_converter_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_channel_converter_get_heap_size(const_p_config &ChannelConverterConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_channel_converter_get_heap_size(const_p_config &ChannelConverterConfig, p_heap_size_in_bytes &uint) Result
 
 // channel_converter_get_heap_size is currently undocumented
-pub fn channel_converter_get_heap_size(const_p_config &ChannelConverterConfig, p_heap_size_in_bytes &usize) Result {
+pub fn channel_converter_get_heap_size(const_p_config &ChannelConverterConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_channel_converter_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -3109,19 +3106,19 @@ pub fn channel_converter_process_pcm_frames(p_converter &ChannelConverter, p_fra
 }
 
 // C: `MA_API ma_result ma_channel_converter_get_input_channel_map(const ma_channel_converter* pConverter, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_channel_converter_get_input_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_channel_converter_get_input_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap uint) Result
 
 // channel_converter_get_input_channel_map is currently undocumented
-pub fn channel_converter_get_input_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn channel_converter_get_input_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_channel_converter_get_input_channel_map(const_p_converter, p_channel_map,
 		channel_map_cap)
 }
 
 // C: `MA_API ma_result ma_channel_converter_get_output_channel_map(const ma_channel_converter* pConverter, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_channel_converter_get_output_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_channel_converter_get_output_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap uint) Result
 
 // channel_converter_get_output_channel_map is currently undocumented
-pub fn channel_converter_get_output_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn channel_converter_get_output_channel_map(const_p_converter &ChannelConverter, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_channel_converter_get_output_channel_map(const_p_converter, p_channel_map,
 		channel_map_cap)
 }
@@ -3166,10 +3163,10 @@ pub fn data_converter_config_init(format_in Format, format_out Format, channels_
 
 // DataConverterExecutionPath is C.ma_data_converter_execution_path
 pub enum DataConverterExecutionPath {
-	passthrough    = C.ma_data_converter_execution_path_passthrough    // No conversion.
-	format_only    = C.ma_data_converter_execution_path_format_only    // Only format conversion.
-	channels_only  = C.ma_data_converter_execution_path_channels_only  // Only channel conversion.
-	resample_only  = C.ma_data_converter_execution_path_resample_only  // Only resampling.
+	passthrough    = C.ma_data_converter_execution_path_passthrough // No conversion.
+	format_only    = C.ma_data_converter_execution_path_format_only // Only format conversion.
+	channels_only  = C.ma_data_converter_execution_path_channels_only // Only channel conversion.
+	resample_only  = C.ma_data_converter_execution_path_resample_only // Only resampling.
 	resample_first = C.ma_data_converter_execution_path_resample_first // All conversions, but resample as the first step.
 	channels_first = C.ma_data_converter_execution_path_channels_first // All conversions, but channels as the first step.
 }
@@ -3199,10 +3196,10 @@ pub mut:
 pub type DataConverter = C.ma_data_converter
 
 // C: `MA_API ma_result ma_data_converter_get_heap_size(const ma_data_converter_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_data_converter_get_heap_size(const_p_config &DataConverterConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_data_converter_get_heap_size(const_p_config &DataConverterConfig, p_heap_size_in_bytes &uint) Result
 
 // data_converter_get_heap_size is currently undocumented
-pub fn data_converter_get_heap_size(const_p_config &DataConverterConfig, p_heap_size_in_bytes &usize) Result {
+pub fn data_converter_get_heap_size(const_p_config &DataConverterConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_data_converter_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -3290,19 +3287,19 @@ pub fn data_converter_get_expected_output_frame_count(const_p_converter &DataCon
 }
 
 // C: `MA_API ma_result ma_data_converter_get_input_channel_map(const ma_data_converter* pConverter, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_data_converter_get_input_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_data_converter_get_input_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap uint) Result
 
 // data_converter_get_input_channel_map is currently undocumented
-pub fn data_converter_get_input_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn data_converter_get_input_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_data_converter_get_input_channel_map(const_p_converter, p_channel_map,
 		channel_map_cap)
 }
 
 // C: `MA_API ma_result ma_data_converter_get_output_channel_map(const ma_data_converter* pConverter, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_data_converter_get_output_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_data_converter_get_output_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap uint) Result
 
 // data_converter_get_output_channel_map is currently undocumented
-pub fn data_converter_get_output_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn data_converter_get_output_channel_map(const_p_converter &DataConverter, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_data_converter_get_output_channel_map(const_p_converter, p_channel_map,
 		channel_map_cap)
 }
@@ -3534,12 +3531,12 @@ pub fn channel_map_init_blank(p_channel_map &u8, channels u32) {
 }
 
 // C: `MA_API void ma_channel_map_init_standard(ma_standard_channel_map standardChannelMap, ma_channel* pChannelMap, size_t channelMapCap, ma_uint32 channels)`
-fn C.ma_channel_map_init_standard(standard_channel_map StandardChannelMap, p_channel_map &u8, channel_map_cap usize, channels u32)
+fn C.ma_channel_map_init_standard(standard_channel_map StandardChannelMap, p_channel_map &u8, channel_map_cap uint, channels u32)
 
 // channel_map_init_standard helpers for retrieving a standard channel map.
 //
 // The output channel map buffer must have a capacity of at least `channelMapCap`.
-pub fn channel_map_init_standard(standard_channel_map StandardChannelMap, p_channel_map &u8, channel_map_cap usize, channels u32) {
+pub fn channel_map_init_standard(standard_channel_map StandardChannelMap, p_channel_map &u8, channel_map_cap uint, channels u32) {
 	C.ma_channel_map_init_standard(standard_channel_map, p_channel_map, channel_map_cap,
 		channels)
 }
@@ -3555,12 +3552,12 @@ pub fn channel_map_copy(p_out &u8, const_p_in &u8, channels u32) {
 }
 
 // C: `MA_API void ma_channel_map_copy_or_default(ma_channel* pOut, size_t channelMapCapOut, const ma_channel* pIn, ma_uint32 channels)`
-fn C.ma_channel_map_copy_or_default(p_out &u8, channel_map_cap_out usize, const_p_in &u8, channels u32)
+fn C.ma_channel_map_copy_or_default(p_out &u8, channel_map_cap_out uint, const_p_in &u8, channels u32)
 
 // channel_map_copy_or_default copies a channel map if one is specified, otherwise copies the default channel map.
 //
 // The output buffer must have a capacity of at least `channels`. If not NULL, the input channel map must also have a capacity of at least `channels`.
-pub fn channel_map_copy_or_default(p_out &u8, channel_map_cap_out usize, const_p_in &u8, channels u32) {
+pub fn channel_map_copy_or_default(p_out &u8, channel_map_cap_out uint, const_p_in &u8, channels u32) {
 	C.ma_channel_map_copy_or_default(p_out, channel_map_cap_out, const_p_in, channels)
 }
 
@@ -3626,14 +3623,14 @@ pub fn channel_map_find_channel_position(channels u32, const_p_channel_map &u8, 
 }
 
 // C: `MA_API size_t ma_channel_map_to_string(const ma_channel* pChannelMap, ma_uint32 channels, char* pBufferOut, size_t bufferCap)`
-fn C.ma_channel_map_to_string(const_p_channel_map &u8, channels u32, p_buffer_out &char, buffer_cap usize) usize
+fn C.ma_channel_map_to_string(const_p_channel_map &u8, channels u32, p_buffer_out &char, buffer_cap uint) uint
 
 // channel_map_to_string generates a string representing the given channel map.
 //
 // This is for printing and debugging purposes, not serialization/deserialization.
 //
 // Returns the length of the string, not including the null terminator.
-pub fn channel_map_to_string(const_p_channel_map &u8, channels u32, p_buffer_out &char, buffer_cap usize) usize {
+pub fn channel_map_to_string(const_p_channel_map &u8, channels u32, p_buffer_out &char, buffer_cap uint) uint {
 	return C.ma_channel_map_to_string(const_p_channel_map, channels, p_buffer_out, buffer_cap)
 }
 
@@ -3686,19 +3683,19 @@ pub mut:
 pub type Rb = C.ma_rb
 
 // C: `MA_API ma_result ma_rb_init_ex(size_t subbufferSizeInBytes, size_t subbufferCount, size_t subbufferStrideInBytes, void* pOptionalPreallocatedBuffer, const ma_allocation_callbacks* pAllocationCallbacks, ma_rb* pRB)`
-fn C.ma_rb_init_ex(subbuffer_size_in_bytes usize, subbuffer_count usize, subbuffer_stride_in_bytes usize, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result
+fn C.ma_rb_init_ex(subbuffer_size_in_bytes uint, subbuffer_count uint, subbuffer_stride_in_bytes uint, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result
 
 // rb_init_ex is currently undocumented
-pub fn rb_init_ex(subbuffer_size_in_bytes usize, subbuffer_count usize, subbuffer_stride_in_bytes usize, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result {
+pub fn rb_init_ex(subbuffer_size_in_bytes uint, subbuffer_count uint, subbuffer_stride_in_bytes uint, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result {
 	return C.ma_rb_init_ex(subbuffer_size_in_bytes, subbuffer_count, subbuffer_stride_in_bytes,
 		p_optional_preallocated_buffer, const_p_allocation_callbacks, p_rb)
 }
 
 // C: `MA_API ma_result ma_rb_init(size_t bufferSizeInBytes, void* pOptionalPreallocatedBuffer, const ma_allocation_callbacks* pAllocationCallbacks, ma_rb* pRB)`
-fn C.ma_rb_init(buffer_size_in_bytes usize, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result
+fn C.ma_rb_init(buffer_size_in_bytes uint, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result
 
 // rb_init is currently undocumented
-pub fn rb_init(buffer_size_in_bytes usize, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result {
+pub fn rb_init(buffer_size_in_bytes uint, p_optional_preallocated_buffer voidptr, const_p_allocation_callbacks &AllocationCallbacks, p_rb &Rb) Result {
 	return C.ma_rb_init(buffer_size_in_bytes, p_optional_preallocated_buffer, const_p_allocation_callbacks,
 		p_rb)
 }
@@ -3720,50 +3717,50 @@ pub fn rb_reset(p_rb &Rb) {
 }
 
 // C: `MA_API ma_result ma_rb_acquire_read(ma_rb* pRB, size_t* pSizeInBytes, void** ppBufferOut)`
-fn C.ma_rb_acquire_read(p_rb &Rb, p_size_in_bytes &usize, pp_buffer_out voidptr) Result
+fn C.ma_rb_acquire_read(p_rb &Rb, p_size_in_bytes &uint, pp_buffer_out voidptr) Result
 
 // rb_acquire_read is currently undocumented
-pub fn rb_acquire_read(p_rb &Rb, p_size_in_bytes &usize, pp_buffer_out voidptr) Result {
+pub fn rb_acquire_read(p_rb &Rb, p_size_in_bytes &uint, pp_buffer_out voidptr) Result {
 	return C.ma_rb_acquire_read(p_rb, p_size_in_bytes, pp_buffer_out)
 }
 
 // C: `MA_API ma_result ma_rb_commit_read(ma_rb* pRB, size_t sizeInBytes)`
-fn C.ma_rb_commit_read(p_rb &Rb, size_in_bytes usize) Result
+fn C.ma_rb_commit_read(p_rb &Rb, size_in_bytes uint) Result
 
 // rb_commit_read is currently undocumented
-pub fn rb_commit_read(p_rb &Rb, size_in_bytes usize) Result {
+pub fn rb_commit_read(p_rb &Rb, size_in_bytes uint) Result {
 	return C.ma_rb_commit_read(p_rb, size_in_bytes)
 }
 
 // C: `MA_API ma_result ma_rb_acquire_write(ma_rb* pRB, size_t* pSizeInBytes, void** ppBufferOut)`
-fn C.ma_rb_acquire_write(p_rb &Rb, p_size_in_bytes &usize, pp_buffer_out voidptr) Result
+fn C.ma_rb_acquire_write(p_rb &Rb, p_size_in_bytes &uint, pp_buffer_out voidptr) Result
 
 // rb_acquire_write is currently undocumented
-pub fn rb_acquire_write(p_rb &Rb, p_size_in_bytes &usize, pp_buffer_out voidptr) Result {
+pub fn rb_acquire_write(p_rb &Rb, p_size_in_bytes &uint, pp_buffer_out voidptr) Result {
 	return C.ma_rb_acquire_write(p_rb, p_size_in_bytes, pp_buffer_out)
 }
 
 // C: `MA_API ma_result ma_rb_commit_write(ma_rb* pRB, size_t sizeInBytes)`
-fn C.ma_rb_commit_write(p_rb &Rb, size_in_bytes usize) Result
+fn C.ma_rb_commit_write(p_rb &Rb, size_in_bytes uint) Result
 
 // rb_commit_write is currently undocumented
-pub fn rb_commit_write(p_rb &Rb, size_in_bytes usize) Result {
+pub fn rb_commit_write(p_rb &Rb, size_in_bytes uint) Result {
 	return C.ma_rb_commit_write(p_rb, size_in_bytes)
 }
 
 // C: `MA_API ma_result ma_rb_seek_read(ma_rb* pRB, size_t offsetInBytes)`
-fn C.ma_rb_seek_read(p_rb &Rb, offset_in_bytes usize) Result
+fn C.ma_rb_seek_read(p_rb &Rb, offset_in_bytes uint) Result
 
 // rb_seek_read is currently undocumented
-pub fn rb_seek_read(p_rb &Rb, offset_in_bytes usize) Result {
+pub fn rb_seek_read(p_rb &Rb, offset_in_bytes uint) Result {
 	return C.ma_rb_seek_read(p_rb, offset_in_bytes)
 }
 
 // C: `MA_API ma_result ma_rb_seek_write(ma_rb* pRB, size_t offsetInBytes)`
-fn C.ma_rb_seek_write(p_rb &Rb, offset_in_bytes usize) Result
+fn C.ma_rb_seek_write(p_rb &Rb, offset_in_bytes uint) Result
 
 // rb_seek_write is currently undocumented
-pub fn rb_seek_write(p_rb &Rb, offset_in_bytes usize) Result {
+pub fn rb_seek_write(p_rb &Rb, offset_in_bytes uint) Result {
 	return C.ma_rb_seek_write(p_rb, offset_in_bytes)
 }
 
@@ -3792,34 +3789,34 @@ pub fn rb_available_write(p_rb &Rb) u32 {
 }
 
 // C: `MA_API size_t ma_rb_get_subbuffer_size(ma_rb* pRB)`
-fn C.ma_rb_get_subbuffer_size(p_rb &Rb) usize
+fn C.ma_rb_get_subbuffer_size(p_rb &Rb) uint
 
 // rb_get_subbuffer_size is currently undocumented
-pub fn rb_get_subbuffer_size(p_rb &Rb) usize {
+pub fn rb_get_subbuffer_size(p_rb &Rb) uint {
 	return C.ma_rb_get_subbuffer_size(p_rb)
 }
 
 // C: `MA_API size_t ma_rb_get_subbuffer_stride(ma_rb* pRB)`
-fn C.ma_rb_get_subbuffer_stride(p_rb &Rb) usize
+fn C.ma_rb_get_subbuffer_stride(p_rb &Rb) uint
 
 // rb_get_subbuffer_stride is currently undocumented
-pub fn rb_get_subbuffer_stride(p_rb &Rb) usize {
+pub fn rb_get_subbuffer_stride(p_rb &Rb) uint {
 	return C.ma_rb_get_subbuffer_stride(p_rb)
 }
 
 // C: `MA_API size_t ma_rb_get_subbuffer_offset(ma_rb* pRB, size_t subbufferIndex)`
-fn C.ma_rb_get_subbuffer_offset(p_rb &Rb, subbuffer_index usize) usize
+fn C.ma_rb_get_subbuffer_offset(p_rb &Rb, subbuffer_index uint) uint
 
 // rb_get_subbuffer_offset is currently undocumented
-pub fn rb_get_subbuffer_offset(p_rb &Rb, subbuffer_index usize) usize {
+pub fn rb_get_subbuffer_offset(p_rb &Rb, subbuffer_index uint) uint {
 	return C.ma_rb_get_subbuffer_offset(p_rb, subbuffer_index)
 }
 
 // C: `MA_API void* ma_rb_get_subbuffer_ptr(ma_rb* pRB, size_t subbufferIndex, void* pBuffer)`
-fn C.ma_rb_get_subbuffer_ptr(p_rb &Rb, subbuffer_index usize, p_buffer voidptr) voidptr
+fn C.ma_rb_get_subbuffer_ptr(p_rb &Rb, subbuffer_index uint, p_buffer voidptr) voidptr
 
 // rb_get_subbuffer_ptr is currently undocumented
-pub fn rb_get_subbuffer_ptr(p_rb &Rb, subbuffer_index usize, p_buffer voidptr) voidptr {
+pub fn rb_get_subbuffer_ptr(p_rb &Rb, subbuffer_index uint, p_buffer voidptr) voidptr {
 	return C.ma_rb_get_subbuffer_ptr(p_rb, subbuffer_index, p_buffer)
 }
 
@@ -4006,26 +4003,26 @@ pub fn result_description(result Result) &char {
 }
 
 // C: `MA_API void* ma_malloc(size_t sz, const ma_allocation_callbacks* pAllocationCallbacks)`
-fn C.ma_malloc(sz usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr
+fn C.ma_malloc(sz uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr
 
 // malloc is currently undocumented
-pub fn malloc(sz usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
+pub fn malloc(sz uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
 	return C.ma_malloc(sz, const_p_allocation_callbacks)
 }
 
 // C: `MA_API void* ma_calloc(size_t sz, const ma_allocation_callbacks* pAllocationCallbacks)`
-fn C.ma_calloc(sz usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr
+fn C.ma_calloc(sz uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr
 
 // calloc is currently undocumented
-pub fn calloc(sz usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
+pub fn calloc(sz uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
 	return C.ma_calloc(sz, const_p_allocation_callbacks)
 }
 
 // C: `MA_API void* ma_realloc(void* p, size_t sz, const ma_allocation_callbacks* pAllocationCallbacks)`
-fn C.ma_realloc(p voidptr, sz usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr
+fn C.ma_realloc(p voidptr, sz uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr
 
 // realloc is currently undocumented
-pub fn realloc(p voidptr, sz usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
+pub fn realloc(p voidptr, sz uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
 	return C.ma_realloc(p, sz, const_p_allocation_callbacks)
 }
 
@@ -4038,10 +4035,10 @@ pub fn free(p voidptr, const_p_allocation_callbacks &AllocationCallbacks) {
 }
 
 // C: `MA_API void* ma_aligned_malloc(size_t sz, size_t alignment, const ma_allocation_callbacks* pAllocationCallbacks)`
-fn C.ma_aligned_malloc(sz usize, alignment usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr
+fn C.ma_aligned_malloc(sz uint, alignment uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr
 
 // aligned_malloc performs an aligned malloc, with the assumption that the alignment is a power of 2.
-pub fn aligned_malloc(sz usize, alignment usize, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
+pub fn aligned_malloc(sz uint, alignment uint, const_p_allocation_callbacks &AllocationCallbacks) voidptr {
 	return C.ma_aligned_malloc(sz, alignment, const_p_allocation_callbacks)
 }
 
@@ -4348,10 +4345,10 @@ pub mut:
 pub type SlotAllocator = C.ma_slot_allocator
 
 // C: `MA_API ma_result ma_slot_allocator_get_heap_size(const ma_slot_allocator_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_slot_allocator_get_heap_size(const_p_config &SlotAllocatorConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_slot_allocator_get_heap_size(const_p_config &SlotAllocatorConfig, p_heap_size_in_bytes &uint) Result
 
 // slot_allocator_get_heap_size is currently undocumented
-pub fn slot_allocator_get_heap_size(const_p_config &SlotAllocatorConfig, p_heap_size_in_bytes &usize) Result {
+pub fn slot_allocator_get_heap_size(const_p_config &SlotAllocatorConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_slot_allocator_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -4516,10 +4513,10 @@ pub mut:
 pub type JobQueue = C.ma_job_queue
 
 // C: `MA_API ma_result ma_job_queue_get_heap_size(const ma_job_queue_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_job_queue_get_heap_size(const_p_config &JobQueueConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_job_queue_get_heap_size(const_p_config &JobQueueConfig, p_heap_size_in_bytes &uint) Result
 
 // job_queue_get_heap_size is currently undocumented
-pub fn job_queue_get_heap_size(const_p_config &JobQueueConfig, p_heap_size_in_bytes &usize) Result {
+pub fn job_queue_get_heap_size(const_p_config &JobQueueConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_job_queue_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -4574,10 +4571,10 @@ TODO Non-numerical: #define MA_SUPPORT_NULL
 // DeviceState is C.ma_device_state
 pub enum DeviceState {
 	uninitialized = C.ma_device_state_uninitialized // 0,
-	stopped       = C.ma_device_state_stopped       // 1, The device's default state after initialization.
-	started       = C.ma_device_state_started       // 2, The device is started and is requesting and/or delivering audio data.
-	starting      = C.ma_device_state_starting      // 3, Transitioning from a stopped state to started.
-	stopping      = C.ma_device_state_stopping      // 4, Transitioning from a started state to stopped.
+	stopped       = C.ma_device_state_stopped // 1, The device's default state after initialization.
+	started       = C.ma_device_state_started // 2, The device is started and is requesting and/or delivering audio data.
+	starting      = C.ma_device_state_starting // 3, Transitioning from a stopped state to started.
+	stopping      = C.ma_device_state_stopping // 4, Transitioning from a started state to stopped.
 }
 
 /*
@@ -4608,7 +4605,7 @@ pub enum Backend {
 	opensl     = C.ma_backend_opensl
 	webaudio   = C.ma_backend_webaudio
 	custom     = C.ma_backend_custom // <-- Custom backend, with callbacks defined by the context config.
-	null       = C.ma_backend_null   // <-- Must always be the last item. Lowest priority, and used as the terminator for backend enumeration.
+	null       = C.ma_backend_null // <-- Must always be the last item. Lowest priority, and used as the terminator for backend enumeration.
 }
 
 /*
@@ -4809,8 +4806,8 @@ pub type StopProc = fn (p_device &Device)
 // DeviceType is C.ma_device_type
 pub enum DeviceType {
 	playback = C.ma_device_type_playback // 1,
-	capture  = C.ma_device_type_capture  // 2,
-	duplex   = C.ma_device_type_duplex   // ma_device_type_playback | ma_device_type_capture, 3
+	capture  = C.ma_device_type_capture // 2,
+	duplex   = C.ma_device_type_duplex // ma_device_type_playback | ma_device_type_capture, 3
 	loopback = C.ma_device_type_loopback // 4,
 }
 
@@ -4822,46 +4819,46 @@ pub enum ShareMode {
 
 // IosSessionCategory is C.ma_ios_session_category
 pub enum IosSessionCategory {
-	default         = C.ma_ios_session_category_default         // 0, AVAudioSessionCategoryPlayAndRecord.
-	@none           = C.ma_ios_session_category_none            // Leave the session category unchanged.
-	ambient         = C.ma_ios_session_category_ambient         // AVAudioSessionCategoryAmbient
-	solo_ambient    = C.ma_ios_session_category_solo_ambient    // AVAudioSessionCategorySoloAmbient
-	playback        = C.ma_ios_session_category_playback        // AVAudioSessionCategoryPlayback
-	record          = C.ma_ios_session_category_record          // AVAudioSessionCategoryRecord
+	default         = C.ma_ios_session_category_default // 0, AVAudioSessionCategoryPlayAndRecord.
+	@none           = C.ma_ios_session_category_none // Leave the session category unchanged.
+	ambient         = C.ma_ios_session_category_ambient // AVAudioSessionCategoryAmbient
+	solo_ambient    = C.ma_ios_session_category_solo_ambient // AVAudioSessionCategorySoloAmbient
+	playback        = C.ma_ios_session_category_playback // AVAudioSessionCategoryPlayback
+	record          = C.ma_ios_session_category_record // AVAudioSessionCategoryRecord
 	play_and_record = C.ma_ios_session_category_play_and_record // AVAudioSessionCategoryPlayAndRecord
-	multi_route     = C.ma_ios_session_category_multi_route     // AVAudioSessionCategoryMultiRoute
+	multi_route     = C.ma_ios_session_category_multi_route // AVAudioSessionCategoryMultiRoute
 }
 
 // IosSessionCategoryOption is C.ma_ios_session_category_option
 pub enum IosSessionCategoryOption {
-	mix_with_others                            = C.ma_ios_session_category_option_mix_with_others                            // 0x01, AVAudioSessionCategoryOptionMixWithOthers
-	duck_others                                = C.ma_ios_session_category_option_duck_others                                // 0x02, AVAudioSessionCategoryOptionDuckOthers
-	allow_bluetooth                            = C.ma_ios_session_category_option_allow_bluetooth                            // 0x04, AVAudioSessionCategoryOptionAllowBluetooth
-	default_to_speaker                         = C.ma_ios_session_category_option_default_to_speaker                         // 0x08, AVAudioSessionCategoryOptionDefaultToSpeaker
+	mix_with_others                            = C.ma_ios_session_category_option_mix_with_others // 0x01, AVAudioSessionCategoryOptionMixWithOthers
+	duck_others                                = C.ma_ios_session_category_option_duck_others // 0x02, AVAudioSessionCategoryOptionDuckOthers
+	allow_bluetooth                            = C.ma_ios_session_category_option_allow_bluetooth // 0x04, AVAudioSessionCategoryOptionAllowBluetooth
+	default_to_speaker                         = C.ma_ios_session_category_option_default_to_speaker // 0x08, AVAudioSessionCategoryOptionDefaultToSpeaker
 	interrupt_spoken_audio_and_mix_with_others = C.ma_ios_session_category_option_interrupt_spoken_audio_and_mix_with_others // 0x11, AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers
-	allow_bluetooth_a2dp                       = C.ma_ios_session_category_option_allow_bluetooth_a2dp                       // 0x20, AVAudioSessionCategoryOptionAllowBluetoothA2DP
+	allow_bluetooth_a2dp                       = C.ma_ios_session_category_option_allow_bluetooth_a2dp // 0x20, AVAudioSessionCategoryOptionAllowBluetoothA2DP
 	allow_air_play                             = C.ma_ios_session_category_option_allow_air_play // 0x40, AVAudioSessionCategoryOptionAllowAirPlay
 }
 
 // OpenslStreamType is C.ma_opensl_stream_type
 pub enum OpenslStreamType {
-	default      = C.ma_opensl_stream_type_default      // 0, Leaves the stream type unset.
-	voice        = C.ma_opensl_stream_type_voice        // SL_ANDROID_STREAM_VOICE
-	system       = C.ma_opensl_stream_type_system       // SL_ANDROID_STREAM_SYSTEM
-	ring         = C.ma_opensl_stream_type_ring         // SL_ANDROID_STREAM_RING
-	media        = C.ma_opensl_stream_type_media        // SL_ANDROID_STREAM_MEDIA
-	alarm        = C.ma_opensl_stream_type_alarm        // SL_ANDROID_STREAM_ALARM
+	default      = C.ma_opensl_stream_type_default // 0, Leaves the stream type unset.
+	voice        = C.ma_opensl_stream_type_voice // SL_ANDROID_STREAM_VOICE
+	system       = C.ma_opensl_stream_type_system // SL_ANDROID_STREAM_SYSTEM
+	ring         = C.ma_opensl_stream_type_ring // SL_ANDROID_STREAM_RING
+	media        = C.ma_opensl_stream_type_media // SL_ANDROID_STREAM_MEDIA
+	alarm        = C.ma_opensl_stream_type_alarm // SL_ANDROID_STREAM_ALARM
 	notification = C.ma_opensl_stream_type_notification // SL_ANDROID_STREAM_NOTIFICATION
 }
 
 // OpenslRecordingPreset is C.ma_opensl_recording_preset
 pub enum OpenslRecordingPreset {
-	default             = C.ma_opensl_recording_preset_default             // 0, Leaves the input preset unset.
-	generic             = C.ma_opensl_recording_preset_generic             // SL_ANDROID_RECORDING_PRESET_GENERIC
-	camcorder           = C.ma_opensl_recording_preset_camcorder           // SL_ANDROID_RECORDING_PRESET_CAMCORDER
-	voice_recognition   = C.ma_opensl_recording_preset_voice_recognition   // SL_ANDROID_RECORDING_PRESET_VOICE_RECOGNITION
+	default             = C.ma_opensl_recording_preset_default // 0, Leaves the input preset unset.
+	generic             = C.ma_opensl_recording_preset_generic // SL_ANDROID_RECORDING_PRESET_GENERIC
+	camcorder           = C.ma_opensl_recording_preset_camcorder // SL_ANDROID_RECORDING_PRESET_CAMCORDER
+	voice_recognition   = C.ma_opensl_recording_preset_voice_recognition // SL_ANDROID_RECORDING_PRESET_VOICE_RECOGNITION
 	voice_communication = C.ma_opensl_recording_preset_voice_communication // SL_ANDROID_RECORDING_PRESET_VOICE_COMMUNICATION
-	voice_unprocessed   = C.ma_opensl_recording_preset_voice_unprocessed   // SL_ANDROID_RECORDING_PRESET_UNPROCESSED
+	voice_unprocessed   = C.ma_opensl_recording_preset_voice_unprocessed // SL_ANDROID_RECORDING_PRESET_UNPROCESSED
 }
 
 // WasapiUsage is C.ma_wasapi_usage
@@ -4873,43 +4870,43 @@ pub enum WasapiUsage {
 
 // AaudioUsage is C.ma_aaudio_usage
 pub enum AaudioUsage {
-	default                        = C.ma_aaudio_usage_default                        // 0, Leaves the usage type unset.
-	media                          = C.ma_aaudio_usage_media                          // AAUDIO_USAGE_MEDIA
-	voice_communication            = C.ma_aaudio_usage_voice_communication            // AAUDIO_USAGE_VOICE_COMMUNICATION
+	default                        = C.ma_aaudio_usage_default // 0, Leaves the usage type unset.
+	media                          = C.ma_aaudio_usage_media // AAUDIO_USAGE_MEDIA
+	voice_communication            = C.ma_aaudio_usage_voice_communication // AAUDIO_USAGE_VOICE_COMMUNICATION
 	voice_communication_signalling = C.ma_aaudio_usage_voice_communication_signalling // AAUDIO_USAGE_VOICE_COMMUNICATION_SIGNALLING
-	alarm                          = C.ma_aaudio_usage_alarm                          // AAUDIO_USAGE_ALARM
-	notification                   = C.ma_aaudio_usage_notification                   // AAUDIO_USAGE_NOTIFICATION
-	notification_ringtone          = C.ma_aaudio_usage_notification_ringtone          // AAUDIO_USAGE_NOTIFICATION_RINGTONE
-	notification_event             = C.ma_aaudio_usage_notification_event             // AAUDIO_USAGE_NOTIFICATION_EVENT
-	assistance_accessibility       = C.ma_aaudio_usage_assistance_accessibility       // AAUDIO_USAGE_ASSISTANCE_ACCESSIBILITY
+	alarm                          = C.ma_aaudio_usage_alarm // AAUDIO_USAGE_ALARM
+	notification                   = C.ma_aaudio_usage_notification // AAUDIO_USAGE_NOTIFICATION
+	notification_ringtone          = C.ma_aaudio_usage_notification_ringtone // AAUDIO_USAGE_NOTIFICATION_RINGTONE
+	notification_event             = C.ma_aaudio_usage_notification_event // AAUDIO_USAGE_NOTIFICATION_EVENT
+	assistance_accessibility       = C.ma_aaudio_usage_assistance_accessibility // AAUDIO_USAGE_ASSISTANCE_ACCESSIBILITY
 	assistance_navigation_guidance = C.ma_aaudio_usage_assistance_navigation_guidance // AAUDIO_USAGE_ASSISTANCE_NAVIGATION_GUIDANCE
-	assistance_sonification        = C.ma_aaudio_usage_assistance_sonification        // AAUDIO_USAGE_ASSISTANCE_SONIFICATION
-	game                           = C.ma_aaudio_usage_game           // AAUDIO_USAGE_GAME
-	assitant                       = C.ma_aaudio_usage_assitant       // AAUDIO_USAGE_ASSISTANT
-	emergency                      = C.ma_aaudio_usage_emergency      // AAUDIO_SYSTEM_USAGE_EMERGENCY
-	safety                         = C.ma_aaudio_usage_safety         // AAUDIO_SYSTEM_USAGE_SAFETY
+	assistance_sonification        = C.ma_aaudio_usage_assistance_sonification // AAUDIO_USAGE_ASSISTANCE_SONIFICATION
+	game                           = C.ma_aaudio_usage_game // AAUDIO_USAGE_GAME
+	assitant                       = C.ma_aaudio_usage_assitant // AAUDIO_USAGE_ASSISTANT
+	emergency                      = C.ma_aaudio_usage_emergency // AAUDIO_SYSTEM_USAGE_EMERGENCY
+	safety                         = C.ma_aaudio_usage_safety // AAUDIO_SYSTEM_USAGE_SAFETY
 	vehicle_status                 = C.ma_aaudio_usage_vehicle_status // AAUDIO_SYSTEM_USAGE_VEHICLE_STATUS
-	announcement                   = C.ma_aaudio_usage_announcement   // AAUDIO_SYSTEM_USAGE_ANNOUNCEMENT
+	announcement                   = C.ma_aaudio_usage_announcement // AAUDIO_SYSTEM_USAGE_ANNOUNCEMENT
 }
 
 // AaudioContentType is C.ma_aaudio_content_type
 pub enum AaudioContentType {
-	default      = C.ma_aaudio_content_type_default      // 0, Leaves the content type unset.
-	speech       = C.ma_aaudio_content_type_speech       // AAUDIO_CONTENT_TYPE_SPEECH
-	music        = C.ma_aaudio_content_type_music        // AAUDIO_CONTENT_TYPE_MUSIC
-	movie        = C.ma_aaudio_content_type_movie        // AAUDIO_CONTENT_TYPE_MOVIE
+	default      = C.ma_aaudio_content_type_default // 0, Leaves the content type unset.
+	speech       = C.ma_aaudio_content_type_speech // AAUDIO_CONTENT_TYPE_SPEECH
+	music        = C.ma_aaudio_content_type_music // AAUDIO_CONTENT_TYPE_MUSIC
+	movie        = C.ma_aaudio_content_type_movie // AAUDIO_CONTENT_TYPE_MOVIE
 	sonification = C.ma_aaudio_content_type_sonification // AAUDIO_CONTENT_TYPE_SONIFICATION
 }
 
 // AaudioInputPreset is C.ma_aaudio_input_preset
 pub enum AaudioInputPreset {
-	default             = C.ma_aaudio_input_preset_default             // 0, Leaves the input preset unset.
-	generic             = C.ma_aaudio_input_preset_generic             // AAUDIO_INPUT_PRESET_GENERIC
-	camcorder           = C.ma_aaudio_input_preset_camcorder           // AAUDIO_INPUT_PRESET_CAMCORDER
-	voice_recognition   = C.ma_aaudio_input_preset_voice_recognition   // AAUDIO_INPUT_PRESET_VOICE_RECOGNITION
+	default             = C.ma_aaudio_input_preset_default // 0, Leaves the input preset unset.
+	generic             = C.ma_aaudio_input_preset_generic // AAUDIO_INPUT_PRESET_GENERIC
+	camcorder           = C.ma_aaudio_input_preset_camcorder // AAUDIO_INPUT_PRESET_CAMCORDER
+	voice_recognition   = C.ma_aaudio_input_preset_voice_recognition // AAUDIO_INPUT_PRESET_VOICE_RECOGNITION
 	voice_communication = C.ma_aaudio_input_preset_voice_communication // AAUDIO_INPUT_PRESET_VOICE_COMMUNICATION
-	unprocessed         = C.ma_aaudio_input_preset_unprocessed         // AAUDIO_INPUT_PRESET_UNPROCESSED
-	voice_performance   = C.ma_aaudio_input_preset_voice_performance   // AAUDIO_INPUT_PRESET_VOICE_PERFORMANCE
+	unprocessed         = C.ma_aaudio_input_preset_unprocessed // AAUDIO_INPUT_PRESET_UNPROCESSED
+	voice_performance   = C.ma_aaudio_input_preset_voice_performance // AAUDIO_INPUT_PRESET_VOICE_PERFORMANCE
 }
 
 @[typedef]
@@ -5066,7 +5063,7 @@ struct C.ma_context_config {
 pub mut:
 	pLog                &Log = unsafe { nil }
 	threadPriority      ThreadPriority
-	threadStackSize     usize
+	threadStackSize     uint
 	pUserData           voidptr
 	allocationCallbacks AllocationCallbacks
 	// TODO// struct {
@@ -5106,7 +5103,7 @@ pub mut:
 	pLog                    &Log = unsafe { nil }
 	log                     Log // Only used if the log is owned by the context. The pLog member will be set to &log in this case.
 	threadPriority          ThreadPriority
-	threadStackSize         usize
+	threadStackSize         uint
 	pUserData               voidptr
 	allocationCallbacks     AllocationCallbacks
 	deviceEnumLock          C.ma_mutex // Used to make ma_context_get_devices() thread safe.
@@ -5430,12 +5427,12 @@ pub fn context_uninit(p_context &Context) Result {
 }
 
 // C: `MA_API size_t ma_context_sizeof(void)`
-fn C.ma_context_sizeof() usize
+fn C.ma_context_sizeof() uint
 
 // context_sizeof retrieves the size of the ma_context object.
 //
 // This is mainly for the purpose of bindings to know how much memory to allocate.
-pub fn context_sizeof() usize {
+pub fn context_sizeof() uint {
 	return C.ma_context_sizeof()
 }
 
@@ -6205,7 +6202,7 @@ pub fn device_get_info(p_device &Device, @type DeviceType, p_device_info &Device
 }
 
 // C: `MA_API ma_result ma_device_get_name(ma_device* pDevice, ma_device_type type, char* pName, size_t nameCap, size_t* pLengthNotIncludingNullTerminator)`
-fn C.ma_device_get_name(p_device &Device, @type DeviceType, p_name &char, name_cap usize, p_length_not_including_null_terminator &usize) Result
+fn C.ma_device_get_name(p_device &Device, @type DeviceType, p_name &char, name_cap uint, p_length_not_including_null_terminator &uint) Result
 
 // device_get_name retrieves the name of the device.
 //
@@ -6255,7 +6252,7 @@ fn C.ma_device_get_name(p_device &Device, @type DeviceType, p_name &char, name_c
 // most cases and will avoid the need for the inefficiency of calling this function twice.
 //
 // This is implemented in terms of `ma_device_get_info()`.
-pub fn device_get_name(p_device &Device, @type DeviceType, p_name &char, name_cap usize, p_length_not_including_null_terminator &usize) Result {
+pub fn device_get_name(p_device &Device, @type DeviceType, p_name &char, name_cap uint, p_length_not_including_null_terminator &uint) Result {
 	return C.ma_device_get_name(p_device, @type, p_name, name_cap, p_length_not_including_null_terminator)
 }
 
@@ -6817,7 +6814,7 @@ pub fn is_backend_enabled(backend Backend) u32 {
 }
 
 // C: `MA_API ma_result ma_get_enabled_backends(ma_backend* pBackends, size_t backendCap, size_t* pBackendCount)`
-fn C.ma_get_enabled_backends(p_backends &Backend, backend_cap usize, p_backend_count &usize) Result
+fn C.ma_get_enabled_backends(p_backends &Backend, backend_cap uint, p_backend_count &uint) Result
 
 // get_enabled_backends retrieves compile-time enabled backends.
 //
@@ -6888,7 +6885,7 @@ fn C.ma_get_enabled_backends(p_backends &Backend, backend_cap usize, p_backend_c
 // See Also
 //--------
 // ma_is_backend_enabled()
-pub fn get_enabled_backends(p_backends &Backend, backend_cap usize, p_backend_count &usize) Result {
+pub fn get_enabled_backends(p_backends &Backend, backend_cap uint, p_backend_count &uint) Result {
 	return C.ma_get_enabled_backends(&p_backends, backend_cap, p_backend_count)
 }
 
@@ -7273,7 +7270,7 @@ struct C.ma_data_source_vtable {
 pub mut:
 	onRead          fn (p_data_source voidptr, p_frames_out voidptr, frame_count u64, p_frames_read &u64) Result // onRead)(ma_data_source*
 	onSeek          fn (p_data_source voidptr, frame_index u64) Result // onSeek)(ma_data_source*
-	onGetDataFormat fn (p_data_source voidptr, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result // onGetDataFormat)(ma_data_source*
+	onGetDataFormat fn (p_data_source voidptr, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result // onGetDataFormat)(ma_data_source*
 	onGetCursor     fn (p_data_source voidptr, p_cursor &u64) Result  // onGetCursor)(ma_data_source*
 	onGetLength     fn (p_data_source voidptr, p_length &u64) Result  // onGetLength)(ma_data_source*
 	onSetLooping    fn (p_data_source voidptr, is_looping u32) Result // onSetLooping)(ma_data_source*
@@ -7360,10 +7357,10 @@ pub fn data_source_seek_to_pcm_frame(p_data_source voidptr, frame_index u64) Res
 }
 
 // C: `MA_API ma_result ma_data_source_get_data_format(ma_data_source* pDataSource, ma_format* pFormat, ma_uint32* pChannels, ma_uint32* pSampleRate, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_data_source_get_data_format(p_data_source voidptr, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_data_source_get_data_format(p_data_source voidptr, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result
 
 // data_source_get_data_format is currently undocumented
-pub fn data_source_get_data_format(p_data_source voidptr, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn data_source_get_data_format(p_data_source voidptr, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_data_source_get_data_format(p_data_source, &p_format, p_channels, p_sample_rate,
 		p_channel_map, channel_map_cap)
 }
@@ -7916,7 +7913,7 @@ pub fn paged_audio_buffer_get_length_in_pcm_frames(p_paged_audio_buffer &PagedAu
 
 // OpenModeFlags is C.ma_open_mode_flags
 pub enum OpenModeFlags {
-	read  = C.MA_OPEN_MODE_READ  // 0x00000001,
+	read  = C.MA_OPEN_MODE_READ // 0x00000001,
 	write = C.MA_OPEN_MODE_WRITE // 0x00000002,
 }
 
@@ -7941,8 +7938,8 @@ pub mut:
 	onOpen  fn (p_vfs voidptr, const_p_file_path &char, open_mode u32, p_file &C.ma_vfs_file) Result // onOpen)
 	onOpenW fn (p_vfs voidptr, const_p_file_path &u16, open_mode u32, p_file &C.ma_vfs_file) Result  // onOpenW)(ma_vfs*
 	onClose fn (p_vfs voidptr, file C.ma_vfs_file) Result // onClose)(ma_vfs*
-	onRead  fn (p_vfs voidptr, file C.ma_vfs_file, p_dst voidptr, size_in_bytes usize, p_bytes_read &usize) Result          // onRead)
-	onWrite fn (p_vfs voidptr, file C.ma_vfs_file, const_p_src voidptr, size_in_bytes usize, p_bytes_written &usize) Result // onWrite)(ma_vfs*
+	onRead  fn (p_vfs voidptr, file C.ma_vfs_file, p_dst voidptr, size_in_bytes uint, p_bytes_read &uint) Result          // onRead)
+	onWrite fn (p_vfs voidptr, file C.ma_vfs_file, const_p_src voidptr, size_in_bytes uint, p_bytes_written &uint) Result // onWrite)(ma_vfs*
 	onSeek  fn (p_vfs voidptr, file C.ma_vfs_file, offset i64, origin SeekOrigin) Result // onSeek)
 	onTell  fn (p_vfs voidptr, file C.ma_vfs_file, p_cursor &i64) Result                 // onTell)
 	onInfo  fn (p_vfs voidptr, file C.ma_vfs_file, p_info &FileInfo) Result              // onInfo)
@@ -7975,18 +7972,18 @@ pub fn vfs_close(p_vfs voidptr, file C.ma_vfs_file) Result {
 }
 
 // C: `MA_API ma_result ma_vfs_read(ma_vfs* pVFS, ma_vfs_file file, void* pDst, size_t sizeInBytes, size_t* pBytesRead)`
-fn C.ma_vfs_read(p_vfs voidptr, file C.ma_vfs_file, p_dst voidptr, size_in_bytes usize, p_bytes_read &usize) Result
+fn C.ma_vfs_read(p_vfs voidptr, file C.ma_vfs_file, p_dst voidptr, size_in_bytes uint, p_bytes_read &uint) Result
 
 // vfs_read is currently undocumented
-pub fn vfs_read(p_vfs voidptr, file C.ma_vfs_file, p_dst voidptr, size_in_bytes usize, p_bytes_read &usize) Result {
+pub fn vfs_read(p_vfs voidptr, file C.ma_vfs_file, p_dst voidptr, size_in_bytes uint, p_bytes_read &uint) Result {
 	return C.ma_vfs_read(p_vfs, file, p_dst, size_in_bytes, p_bytes_read)
 }
 
 // C: `MA_API ma_result ma_vfs_write(ma_vfs* pVFS, ma_vfs_file file, const void* pSrc, size_t sizeInBytes, size_t* pBytesWritten)`
-fn C.ma_vfs_write(p_vfs voidptr, file C.ma_vfs_file, const_p_src voidptr, size_in_bytes usize, p_bytes_written &usize) Result
+fn C.ma_vfs_write(p_vfs voidptr, file C.ma_vfs_file, const_p_src voidptr, size_in_bytes uint, p_bytes_written &uint) Result
 
 // vfs_write is currently undocumented
-pub fn vfs_write(p_vfs voidptr, file C.ma_vfs_file, const_p_src voidptr, size_in_bytes usize, p_bytes_written &usize) Result {
+pub fn vfs_write(p_vfs voidptr, file C.ma_vfs_file, const_p_src voidptr, size_in_bytes uint, p_bytes_written &uint) Result {
 	return C.ma_vfs_write(p_vfs, file, const_p_src, size_in_bytes, p_bytes_written)
 }
 
@@ -8015,10 +8012,10 @@ pub fn vfs_info(p_vfs voidptr, file C.ma_vfs_file, p_info &FileInfo) Result {
 }
 
 // C: `MA_API ma_result ma_vfs_open_and_read_file(ma_vfs* pVFS, const char* pFilePath, void** ppData, size_t* pSize, const ma_allocation_callbacks* pAllocationCallbacks)`
-fn C.ma_vfs_open_and_read_file(p_vfs voidptr, const_p_file_path &char, pp_data voidptr, p_size &usize, const_p_allocation_callbacks &AllocationCallbacks) Result
+fn C.ma_vfs_open_and_read_file(p_vfs voidptr, const_p_file_path &char, pp_data voidptr, p_size &uint, const_p_allocation_callbacks &AllocationCallbacks) Result
 
 // vfs_open_and_read_file is currently undocumented
-pub fn vfs_open_and_read_file(p_vfs voidptr, const_p_file_path &char, pp_data voidptr, p_size &usize, const_p_allocation_callbacks &AllocationCallbacks) Result {
+pub fn vfs_open_and_read_file(p_vfs voidptr, const_p_file_path &char, pp_data voidptr, p_size &uint, const_p_allocation_callbacks &AllocationCallbacks) Result {
 	return C.ma_vfs_open_and_read_file(p_vfs, const_p_file_path, pp_data, p_size, const_p_allocation_callbacks)
 }
 
@@ -8041,7 +8038,7 @@ pub fn default_vfs_init(p_vfs &DefaultVfs, const_p_allocation_callbacks &Allocat
 
 // ReadProc is currently undocumented
 // C: typedef ma_result (* ma_read_proc)(void* pUserData, void* pBufferOut, size_t bytesToRead, size_t* pBytesRead);
-pub type ReadProc = fn (p_user_data voidptr, p_buffer_out voidptr, bytes_to_read usize, p_bytes_read &usize) Result
+pub type ReadProc = fn (p_user_data voidptr, p_buffer_out voidptr, bytes_to_read uint, p_bytes_read &uint) Result
 
 // SeekProc is currently undocumented
 // C: typedef ma_result (* ma_seek_proc)(void* pUserData, ma_int64 offset, ma_seek_origin origin);
@@ -8081,9 +8078,9 @@ pub fn decoding_backend_config_init(preferred_format Format, seek_point_count u3
 struct C.ma_decoding_backend_vtable {
 pub mut:
 	onInit       fn (p_user_data voidptr, on_read ReadProc, on_seek SeekProc, on_tell TellProc, p_read_seek_tell_user_data voidptr, const_p_config &DecodingBackendConfig, const_p_allocation_callbacks &AllocationCallbacks, pp_backend voidptr) Result // onInit
-	onInitFile   fn (p_user_data voidptr, const_p_file_path &char, const_p_config &DecodingBackendConfig, const_p_allocation_callbacks &AllocationCallbacks, pp_backend voidptr) Result               // onInitFile Optional.
-	onInitFileW  fn (p_user_data voidptr, const_p_file_path &u16, const_p_config &DecodingBackendConfig, const_p_allocation_callbacks &AllocationCallbacks, pp_backend voidptr) Result                // onInitFileW Optional.
-	onInitMemory fn (p_user_data voidptr, const_p_data voidptr, data_size usize, const_p_config &DecodingBackendConfig, const_p_allocation_callbacks &AllocationCallbacks, pp_backend voidptr) Result // onInitMemory)(void* Optional.
+	onInitFile   fn (p_user_data voidptr, const_p_file_path &char, const_p_config &DecodingBackendConfig, const_p_allocation_callbacks &AllocationCallbacks, pp_backend voidptr) Result              // onInitFile Optional.
+	onInitFileW  fn (p_user_data voidptr, const_p_file_path &u16, const_p_config &DecodingBackendConfig, const_p_allocation_callbacks &AllocationCallbacks, pp_backend voidptr) Result               // onInitFileW Optional.
+	onInitMemory fn (p_user_data voidptr, const_p_data voidptr, data_size uint, const_p_config &DecodingBackendConfig, const_p_allocation_callbacks &AllocationCallbacks, pp_backend voidptr) Result // onInitMemory)(void* Optional.
 	onUninit     fn (p_user_data voidptr, p_backend voidptr, const_p_allocation_callbacks &AllocationCallbacks) // onUninit
 }
 
@@ -8091,7 +8088,7 @@ pub type DecodingBackendVtable = C.ma_decoding_backend_vtable
 
 // DecoderReadProc returns the number of bytes read.
 // C: typedef ma_result (* ma_decoder_read_proc)(ma_decoder* pDecoder, void* pBufferOut, size_t bytesToRead, size_t* pBytesRead);
-pub type DecoderReadProc = fn (p_decoder &Decoder, p_buffer_out voidptr, bytes_to_read usize, p_bytes_read &usize) Result
+pub type DecoderReadProc = fn (p_decoder &Decoder, p_buffer_out voidptr, bytes_to_read uint, p_bytes_read &uint) Result
 
 // DecoderSeekProc is currently undocumented
 // C: typedef ma_result (* ma_decoder_seek_proc)(ma_decoder* pDecoder, ma_int64 byteOffset, ma_seek_origin origin);
@@ -8176,10 +8173,10 @@ pub fn decoder_init(on_read DecoderReadProc, on_seek DecoderSeekProc, p_user_dat
 }
 
 // C: `MA_API ma_result ma_decoder_init_memory(const void* pData, size_t dataSize, const ma_decoder_config* pConfig, ma_decoder* pDecoder)`
-fn C.ma_decoder_init_memory(const_p_data voidptr, data_size usize, const_p_config &DecoderConfig, p_decoder &Decoder) Result
+fn C.ma_decoder_init_memory(const_p_data voidptr, data_size uint, const_p_config &DecoderConfig, p_decoder &Decoder) Result
 
 // decoder_init_memory is currently undocumented
-pub fn decoder_init_memory(const_p_data voidptr, data_size usize, const_p_config &DecoderConfig, p_decoder &Decoder) Result {
+pub fn decoder_init_memory(const_p_data voidptr, data_size uint, const_p_config &DecoderConfig, p_decoder &Decoder) Result {
 	return C.ma_decoder_init_memory(const_p_data, data_size, const_p_config, p_decoder)
 }
 
@@ -8244,10 +8241,10 @@ pub fn decoder_seek_to_pcm_frame(p_decoder &Decoder, frame_index u64) Result {
 }
 
 // C: `MA_API ma_result ma_decoder_get_data_format(ma_decoder* pDecoder, ma_format* pFormat, ma_uint32* pChannels, ma_uint32* pSampleRate, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_decoder_get_data_format(p_decoder &Decoder, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_decoder_get_data_format(p_decoder &Decoder, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result
 
 // decoder_get_data_format retrieves the decoder's output data format.
-pub fn decoder_get_data_format(p_decoder &Decoder, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn decoder_get_data_format(p_decoder &Decoder, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_decoder_get_data_format(p_decoder, &p_format, p_channels, p_sample_rate,
 		p_channel_map, channel_map_cap)
 }
@@ -8312,16 +8309,16 @@ pub fn decode_file(const_p_file_path &char, p_config &DecoderConfig, p_frame_cou
 }
 
 // C: `MA_API ma_result ma_decode_memory(const void* pData, size_t dataSize, ma_decoder_config* pConfig, ma_uint64* pFrameCountOut, void** ppPCMFramesOut)`
-fn C.ma_decode_memory(const_p_data voidptr, data_size usize, p_config &DecoderConfig, p_frame_count_out &u64, pp_pcm_frames_out voidptr) Result
+fn C.ma_decode_memory(const_p_data voidptr, data_size uint, p_config &DecoderConfig, p_frame_count_out &u64, pp_pcm_frames_out voidptr) Result
 
 // decode_memory is currently undocumented
-pub fn decode_memory(const_p_data voidptr, data_size usize, p_config &DecoderConfig, p_frame_count_out &u64, pp_pcm_frames_out voidptr) Result {
+pub fn decode_memory(const_p_data voidptr, data_size uint, p_config &DecoderConfig, p_frame_count_out &u64, pp_pcm_frames_out voidptr) Result {
 	return C.ma_decode_memory(const_p_data, data_size, p_config, p_frame_count_out, pp_pcm_frames_out)
 }
 
 // EncoderWriteProc is currently undocumented
 // C: typedef ma_result (* ma_encoder_write_proc)           (ma_encoder* pEncoder, const void* pBufferIn, size_t bytesToWrite, size_t* pBytesWritten);
-pub type EncoderWriteProc = fn (p_encoder &Encoder, const_p_buffer_in voidptr, bytes_to_write usize, p_bytes_written &usize) Result
+pub type EncoderWriteProc = fn (p_encoder &Encoder, const_p_buffer_in voidptr, bytes_to_write uint, p_bytes_written &uint) Result
 
 // EncoderSeekProc is currently undocumented
 // C: typedef ma_result (* ma_encoder_seek_proc)            (ma_encoder* pEncoder, ma_int64 offset, ma_seek_origin origin);
@@ -8584,10 +8581,10 @@ pub mut:
 pub type Noise = C.ma_noise
 
 // C: `MA_API ma_result ma_noise_get_heap_size(const ma_noise_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_noise_get_heap_size(const_p_config &NoiseConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_noise_get_heap_size(const_p_config &NoiseConfig, p_heap_size_in_bytes &uint) Result
 
 // noise_get_heap_size is currently undocumented
-pub fn noise_get_heap_size(const_p_config &NoiseConfig, p_heap_size_in_bytes &usize) Result {
+pub fn noise_get_heap_size(const_p_config &NoiseConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_noise_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -8653,10 +8650,10 @@ TODO Non-numerical: #define MA_NO_RESOURCE_MANAGER
 
 // ResourceManagerDataSourceFlags is C.ma_resource_manager_data_source_flags
 pub enum ResourceManagerDataSourceFlags {
-	stream         = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_STREAM         // 0x00000001, When set, does not load the entire data source in memory. Disk I/O will happen on job threads.
-	decode         = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_DECODE         // 0x00000002, Decode data before storing in memory. When set, decoding is done at the resource manager level rather than the mixing thread. Results in faster mixing, but higher memory usage.
-	async          = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_ASYNC          // 0x00000004, When set, the resource manager will load the data source asynchronously.
-	wait_init      = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_WAIT_INIT      // 0x00000008, When set, waits for initialization of the underlying data source before returning from ma_resource_manager_data_source_init().
+	stream         = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_STREAM // 0x00000001, When set, does not load the entire data source in memory. Disk I/O will happen on job threads.
+	decode         = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_DECODE // 0x00000002, Decode data before storing in memory. When set, decoding is done at the resource manager level rather than the mixing thread. Results in faster mixing, but higher memory usage.
+	async          = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_ASYNC // 0x00000004, When set, the resource manager will load the data source asynchronously.
+	wait_init      = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_WAIT_INIT // 0x00000008, When set, waits for initialization of the underlying data source before returning from ma_resource_manager_data_source_init().
 	unknown_length = C.MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_UNKNOWN_LENGTH // 0x00000010, Gives the resource manager a hint that the length of the data source is unknown and calling `ma_data_source_get_length_in_pcm_frames()` should be avoided.
 }
 
@@ -8772,9 +8769,9 @@ pub fn resource_manager_data_source_config_init() ResourceManagerDataSourceConfi
 
 // ResourceManagerDataSupplyType is C.ma_resource_manager_data_supply_type
 pub enum ResourceManagerDataSupplyType {
-	unknown       = C.ma_resource_manager_data_supply_type_unknown       // 0, Used for determining whether or the data supply has been initialized.
-	encoded       = C.ma_resource_manager_data_supply_type_encoded       // Data supply is an encoded buffer. Connector is ma_decoder.
-	decoded       = C.ma_resource_manager_data_supply_type_decoded       // Data supply is a decoded buffer. Connector is ma_audio_buffer.
+	unknown       = C.ma_resource_manager_data_supply_type_unknown // 0, Used for determining whether or the data supply has been initialized.
+	encoded       = C.ma_resource_manager_data_supply_type_encoded // Data supply is an encoded buffer. Connector is ma_decoder.
+	decoded       = C.ma_resource_manager_data_supply_type_decoded // Data supply is a decoded buffer. Connector is ma_audio_buffer.
 	decoded_paged = C.ma_resource_manager_data_supply_type_decoded_paged // Data supply is a linked list of decoded buffers. Connector is ma_paged_audio_buffer.
 }
 
@@ -8845,7 +8842,6 @@ pub mut:
 	// TODO MA_ATOMIC(4, ma_uint32) executionPointer
 	// TODO MA_ATOMIC(4, ma_bool32) isLooping
 	// Written by the job thread, read by the public API.
-
 	pPageData voidptr // Buffer containing the decoded data of each page. Allocated once at initialization time.
 	// TODO MA_ATOMIC(4, ma_uint32) pageFrameCount[2]
 	// TODO MA_ATOMIC(4, ma_result) result
@@ -8970,19 +8966,19 @@ pub fn resource_manager_register_decoded_data_w(p_resource_manager &ResourceMana
 }
 
 // C: `MA_API ma_result ma_resource_manager_register_encoded_data(ma_resource_manager* pResourceManager, const char* pName, const void* pData, size_t sizeInBytes);/* Does not copy. Increments the reference count if already exists and returns MA_SUCCESS. */`
-fn C.ma_resource_manager_register_encoded_data(p_resource_manager &ResourceManager, const_p_name &char, const_p_data voidptr, size_in_bytes usize) Result
+fn C.ma_resource_manager_register_encoded_data(p_resource_manager &ResourceManager, const_p_name &char, const_p_data voidptr, size_in_bytes uint) Result
 
 // resource_manager_register_encoded_data does not copy. Increments the reference count if already exists and returns MA_SUCCESS.
-pub fn resource_manager_register_encoded_data(p_resource_manager &ResourceManager, const_p_name &char, const_p_data voidptr, size_in_bytes usize) Result {
+pub fn resource_manager_register_encoded_data(p_resource_manager &ResourceManager, const_p_name &char, const_p_data voidptr, size_in_bytes uint) Result {
 	return C.ma_resource_manager_register_encoded_data(p_resource_manager, const_p_name,
 		const_p_data, size_in_bytes)
 }
 
 // C: `MA_API ma_result ma_resource_manager_register_encoded_data_w(ma_resource_manager* pResourceManager, const wchar_t* pName, const void* pData, size_t sizeInBytes)`
-fn C.ma_resource_manager_register_encoded_data_w(p_resource_manager &ResourceManager, const_p_name &u16, const_p_data voidptr, size_in_bytes usize) Result
+fn C.ma_resource_manager_register_encoded_data_w(p_resource_manager &ResourceManager, const_p_name &u16, const_p_data voidptr, size_in_bytes uint) Result
 
 // resource_manager_register_encoded_data_w is currently undocumented
-pub fn resource_manager_register_encoded_data_w(p_resource_manager &ResourceManager, const_p_name &u16, const_p_data voidptr, size_in_bytes usize) Result {
+pub fn resource_manager_register_encoded_data_w(p_resource_manager &ResourceManager, const_p_name &u16, const_p_data voidptr, size_in_bytes uint) Result {
 	return C.ma_resource_manager_register_encoded_data_w(p_resource_manager, const_p_name,
 		const_p_data, size_in_bytes)
 }
@@ -9081,10 +9077,10 @@ pub fn resource_manager_data_buffer_seek_to_pcm_frame(p_data_buffer &ResourceMan
 }
 
 // C: `MA_API ma_result ma_resource_manager_data_buffer_get_data_format(ma_resource_manager_data_buffer* pDataBuffer, ma_format* pFormat, ma_uint32* pChannels, ma_uint32* pSampleRate, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_resource_manager_data_buffer_get_data_format(p_data_buffer &ResourceManagerDataBuffer, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_resource_manager_data_buffer_get_data_format(p_data_buffer &ResourceManagerDataBuffer, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result
 
 // resource_manager_data_buffer_get_data_format is currently undocumented
-pub fn resource_manager_data_buffer_get_data_format(p_data_buffer &ResourceManagerDataBuffer, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn resource_manager_data_buffer_get_data_format(p_data_buffer &ResourceManagerDataBuffer, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_resource_manager_data_buffer_get_data_format(p_data_buffer, &p_format,
 		p_channels, p_sample_rate, p_channel_map, channel_map_cap)
 }
@@ -9190,10 +9186,10 @@ pub fn resource_manager_data_stream_seek_to_pcm_frame(p_data_stream &ResourceMan
 }
 
 // C: `MA_API ma_result ma_resource_manager_data_stream_get_data_format(ma_resource_manager_data_stream* pDataStream, ma_format* pFormat, ma_uint32* pChannels, ma_uint32* pSampleRate, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_resource_manager_data_stream_get_data_format(p_data_stream &ResourceManagerDataStream, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_resource_manager_data_stream_get_data_format(p_data_stream &ResourceManagerDataStream, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result
 
 // resource_manager_data_stream_get_data_format is currently undocumented
-pub fn resource_manager_data_stream_get_data_format(p_data_stream &ResourceManagerDataStream, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn resource_manager_data_stream_get_data_format(p_data_stream &ResourceManagerDataStream, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_resource_manager_data_stream_get_data_format(p_data_stream, &p_format,
 		p_channels, p_sample_rate, p_channel_map, channel_map_cap)
 }
@@ -9308,10 +9304,10 @@ pub fn resource_manager_data_source_seek_to_pcm_frame(p_data_source &ResourceMan
 }
 
 // C: `MA_API ma_result ma_resource_manager_data_source_get_data_format(ma_resource_manager_data_source* pDataSource, ma_format* pFormat, ma_uint32* pChannels, ma_uint32* pSampleRate, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_resource_manager_data_source_get_data_format(p_data_source &ResourceManagerDataSource, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_resource_manager_data_source_get_data_format(p_data_source &ResourceManagerDataSource, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result
 
 // resource_manager_data_source_get_data_format is currently undocumented
-pub fn resource_manager_data_source_get_data_format(p_data_source &ResourceManagerDataSource, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn resource_manager_data_source_get_data_format(p_data_source &ResourceManagerDataSource, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_resource_manager_data_source_get_data_format(p_data_source, &p_format,
 		p_channels, p_sample_rate, p_channel_map, channel_map_cap)
 }
@@ -9417,11 +9413,11 @@ pub const node_bus_count_unknown = 255
 
 // NodeFlags is C.ma_node_flags
 pub enum NodeFlags {
-	passthrough                = C.MA_NODE_FLAG_PASSTHROUGH                // 0x00000001,
-	continuous_processing      = C.MA_NODE_FLAG_CONTINUOUS_PROCESSING      // 0x00000002,
-	allow_null_input           = C.MA_NODE_FLAG_ALLOW_NULL_INPUT           // 0x00000004,
+	passthrough                = C.MA_NODE_FLAG_PASSTHROUGH // 0x00000001,
+	continuous_processing      = C.MA_NODE_FLAG_CONTINUOUS_PROCESSING // 0x00000002,
+	allow_null_input           = C.MA_NODE_FLAG_ALLOW_NULL_INPUT // 0x00000004,
 	different_processing_rates = C.MA_NODE_FLAG_DIFFERENT_PROCESSING_RATES // 0x00000008,
-	silent_output              = C.MA_NODE_FLAG_SILENT_OUTPUT              // 0x00000010,
+	silent_output              = C.MA_NODE_FLAG_SILENT_OUTPUT // 0x00000010,
 }
 
 // NodeState is C.ma_node_state
@@ -9492,7 +9488,6 @@ pub mut:
 	// TODO MA_ATOMIC(4, ma_uint32) nextCounter
 	// TODO MA_ATOMIC(4, ma_spinlock) lock
 	// Set once at startup.
-
 	channels u8 // The number of channels in the audio stream for this bus.
 }
 
@@ -9507,7 +9502,6 @@ pub mut:
 	pCachedData                 &f32        = unsafe { nil } // Allocated on the heap. Fixed size. Needs to be stored on the heap because reading from output buses is done in separate function calls.
 	cachedDataCapInFramesPerBus u16 // The capacity of the input data cache in frames, per bus.
 	// These variables are read and written only from the audio thread.
-
 	cachedFrameCountOut  u16
 	cachedFrameCountIn   u16
 	consumedFrameCountIn u16 // These variables are read and written between different threads.
@@ -9527,10 +9521,10 @@ pub mut:
 pub type NodeBase = C.ma_node_base
 
 // C: `MA_API ma_result ma_node_get_heap_size(ma_node_graph* pNodeGraph, const ma_node_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_node_get_heap_size(p_node_graph &NodeGraph, const_p_config &NodeConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_node_get_heap_size(p_node_graph &NodeGraph, const_p_config &NodeConfig, p_heap_size_in_bytes &uint) Result
 
 // node_get_heap_size is currently undocumented
-pub fn node_get_heap_size(p_node_graph &NodeGraph, const_p_config &NodeConfig, p_heap_size_in_bytes &usize) Result {
+pub fn node_get_heap_size(p_node_graph &NodeGraph, const_p_config &NodeConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_node_get_heap_size(p_node_graph, const_p_config, p_heap_size_in_bytes)
 }
 
@@ -10391,13 +10385,13 @@ pub fn delay_node_get_decay(const_p_delay_node &DelayNode) f32 {
 
 // SoundFlags is C.ma_sound_flags
 pub enum SoundFlags {
-	stream                = C.MA_SOUND_FLAG_STREAM                // 0x00000001, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_STREAM
-	decode                = C.MA_SOUND_FLAG_DECODE                // 0x00000002, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_DECODE
-	async                 = C.MA_SOUND_FLAG_ASYNC                 // 0x00000004, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_ASYNC
-	wait_init             = C.MA_SOUND_FLAG_WAIT_INIT             // 0x00000008, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_WAIT_INIT
+	stream                = C.MA_SOUND_FLAG_STREAM // 0x00000001, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_STREAM
+	decode                = C.MA_SOUND_FLAG_DECODE // 0x00000002, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_DECODE
+	async                 = C.MA_SOUND_FLAG_ASYNC // 0x00000004, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_ASYNC
+	wait_init             = C.MA_SOUND_FLAG_WAIT_INIT // 0x00000008, MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_WAIT_INIT
 	no_default_attachment = C.MA_SOUND_FLAG_NO_DEFAULT_ATTACHMENT // 0x00000010, Do not attach to the endpoint by default. Useful for when setting up nodes in a complex graph system.
-	no_pitch              = C.MA_SOUND_FLAG_NO_PITCH              // 0x00000020, Disable pitch shifting with ma_sound_set_pitch() and ma_sound_group_set_pitch(). This is an optimization.
-	no_spatialization     = C.MA_SOUND_FLAG_NO_SPATIALIZATION     // 0x00000040, Disable spatialization.
+	no_pitch              = C.MA_SOUND_FLAG_NO_PITCH // 0x00000020, Disable pitch shifting with ma_sound_set_pitch() and ma_sound_group_set_pitch(). This is an optimization.
+	no_spatialization     = C.MA_SOUND_FLAG_NO_SPATIALIZATION // 0x00000040, Disable spatialization.
 }
 
 pub const engine_max_listeners = 4
@@ -10454,7 +10448,6 @@ pub mut:
 	// TODO MA_ATOMIC(4, ma_bool32) isSpatializationDisabled
 	// TODO MA_ATOMIC(4, ma_uint32) pinnedListenerIndex
 	// Memory management.
-
 	_ownsHeap u8
 	_pHeap    voidptr
 }
@@ -10462,10 +10455,10 @@ pub mut:
 pub type EngineNode = C.ma_engine_node
 
 // C: `MA_API ma_result ma_engine_node_get_heap_size(const ma_engine_node_config* pConfig, size_t* pHeapSizeInBytes)`
-fn C.ma_engine_node_get_heap_size(const_p_config &EngineNodeConfig, p_heap_size_in_bytes &usize) Result
+fn C.ma_engine_node_get_heap_size(const_p_config &EngineNodeConfig, p_heap_size_in_bytes &uint) Result
 
 // engine_node_get_heap_size is currently undocumented
-pub fn engine_node_get_heap_size(const_p_config &EngineNodeConfig, p_heap_size_in_bytes &usize) Result {
+pub fn engine_node_get_heap_size(const_p_config &EngineNodeConfig, p_heap_size_in_bytes &uint) Result {
 	return C.ma_engine_node_get_heap_size(const_p_config, p_heap_size_in_bytes)
 }
 
@@ -11395,10 +11388,10 @@ pub fn sound_seek_to_pcm_frame(p_sound &Sound, frame_index u64) Result {
 }
 
 // C: `MA_API ma_result ma_sound_get_data_format(ma_sound* pSound, ma_format* pFormat, ma_uint32* pChannels, ma_uint32* pSampleRate, ma_channel* pChannelMap, size_t channelMapCap)`
-fn C.ma_sound_get_data_format(p_sound &Sound, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result
+fn C.ma_sound_get_data_format(p_sound &Sound, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result
 
 // sound_get_data_format is currently undocumented
-pub fn sound_get_data_format(p_sound &Sound, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap usize) Result {
+pub fn sound_get_data_format(p_sound &Sound, p_format &Format, p_channels &u32, p_sample_rate &u32, p_channel_map &u8, channel_map_cap uint) Result {
 	return C.ma_sound_get_data_format(p_sound, &p_format, p_channels, p_sample_rate, p_channel_map,
 		channel_map_cap)
 }

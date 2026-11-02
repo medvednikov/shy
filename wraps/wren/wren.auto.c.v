@@ -56,7 +56,7 @@ pub type Handle = C.WrenHandle
 // - To free memory, `memory` will be the memory to free and `newSize` will be
 //   zero. It should return NULL.
 // C: typedef void* (*WrenReallocateFn)(void* memory, size_t newSize, void* userData);
-pub type ReallocateFn = fn (memory voidptr, new_size usize, user_data voidptr) voidptr
+pub type ReallocateFn = fn (memory voidptr, new_size uint, user_data voidptr) voidptr
 
 // ForeignMethodFn A function callable from Wren code, but implemented in C.
 // C: typedef void (*WrenForeignMethodFn)(WrenVM* vm);
@@ -145,7 +145,6 @@ pub mut:
 	//
 	// This may be `NULL` if the foreign class does not need to finalize.
 	//
-
 	finalize FinalizerFn
 }
 
@@ -189,7 +188,6 @@ pub mut:
 	// it should be allocated using the same allocation function you provide
 	// above.
 	//
-
 	resolveModuleFn ResolveModuleFn
 	// The callback Wren uses to load a module.
 	//
@@ -207,7 +205,6 @@ pub mut:
 	// If a module with the given name could not be found by the embedder, it
 	// should return NULL and Wren will report that as a runtime error.
 	//
-
 	loadModuleFn LoadModuleFn
 	// The callback Wren uses to find a foreign method and bind it to a class.
 	//
@@ -219,7 +216,6 @@ pub mut:
 	// If the foreign function could not be found, this should return NULL and
 	// Wren will report it as runtime error.
 	//
-
 	bindForeignMethodFn BindForeignMethodFn
 	// The callback Wren uses to find a foreign class and get its foreign methods.
 	//
@@ -228,14 +224,12 @@ pub mut:
 	// foreign functions uses to allocate and (optionally) finalize the bytes
 	// stored in the foreign object when an instance is created.
 	//
-
 	bindForeignClassFn BindForeignClassFn
 	// The callback Wren uses to display text when `System.print()` or the other
 	// related functions are called.
 	//
 	// If this is `NULL`, Wren discards any printed text.
 	//
-
 	writeFn WriteFn
 	// The callback Wren uses to report errors.
 	//
@@ -243,15 +237,13 @@ pub mut:
 	// number, and an error message. If this is `NULL`, Wren doesn't report any
 	// errors.
 	//
-
 	errorFn ErrorFn
 	// The number of bytes Wren will allocate before triggering the first garbage
 	// collection.
 	//
 	// If zero, defaults to 10MB.
 	//
-
-	initialHeapSize usize
+	initialHeapSize uint
 	// After a collection occurs, the threshold for the next collection is
 	// determined based on the number of bytes remaining in use. This allows Wren
 	// to shrink its memory usage automatically after reclaiming a large amount
@@ -263,8 +255,7 @@ pub mut:
 	//
 	// If zero, defaults to 1MB.
 	//
-
-	minHeapSize usize
+	minHeapSize uint
 	// Wren will resize the heap automatically as the number of bytes
 	// remaining in use after a collection changes. This number determines the
 	// amount of additional memory Wren will use after a collection, as a
@@ -280,11 +271,9 @@ pub mut:
 	//
 	// If zero, defaults to 50.
 	//
-
 	heapGrowthPercent int
 	// User-defined data associated with the VM.
 	//
-
 	userData voidptr
 }
 
@@ -503,12 +492,12 @@ pub fn set_slot_bool(vm &VM, slot int, value bool) {
 }
 
 // C: `WREN_API void wrenSetSlotBytes(WrenVM* vm, int slot, const char* bytes, size_t length)`
-fn C.wrenSetSlotBytes(vm &C.WrenVM, slot int, const_bytes &char, length usize)
+fn C.wrenSetSlotBytes(vm &C.WrenVM, slot int, const_bytes &char, length uint)
 
 // set_slot_bytes Stores the array `length` of `bytes` in `slot`.
 // set_slot_bytes The bytes are copied to a new string within Wren's heap, so you can free
 // memory used by them after this is called.
-pub fn set_slot_bytes(vm &VM, slot int, const_bytes &char, length usize) {
+pub fn set_slot_bytes(vm &VM, slot int, const_bytes &char, length uint) {
 	C.wrenSetSlotBytes(vm, slot, const_bytes, length)
 }
 
@@ -521,7 +510,7 @@ pub fn set_slot_double(vm &VM, slot int, value f64) {
 }
 
 // C: `WREN_API void* wrenSetSlotNewForeign(WrenVM* vm, int slot, int classSlot, size_t size)`
-fn C.wrenSetSlotNewForeign(vm &C.WrenVM, slot int, class_slot int, size usize) voidptr
+fn C.wrenSetSlotNewForeign(vm &C.WrenVM, slot int, class_slot int, size uint) voidptr
 
 // set_slot_new_foreign Creates a new instance of the foreign class stored in `classSlot` with `size`
 // set_slot_new_foreign bytes of raw storage and places the resulting object in `slot`.
@@ -530,7 +519,7 @@ fn C.wrenSetSlotNewForeign(vm &C.WrenVM, slot int, class_slot int, size usize) v
 // call the allocator foreign method. In there, call this to create the object
 // and then the constructor will be invoked when the allocator returns.
 // Returns a pointer to the foreign object's data.
-pub fn set_slot_new_foreign(vm &VM, slot int, class_slot int, size usize) voidptr {
+pub fn set_slot_new_foreign(vm &VM, slot int, class_slot int, size uint) voidptr {
 	return C.wrenSetSlotNewForeign(vm, slot, class_slot, size)
 }
 

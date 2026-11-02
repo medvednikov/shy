@@ -116,7 +116,7 @@ pub fn (vm &VM) set_slot_bool(slot int, value bool) {
 // set_slot_bytes Stores the array `length` of `bytes` in `slot`.
 // set_slot_bytes The bytes are copied to a new string within Wren's heap, so you can free
 // memory used by them after this is called.
-pub fn (vm &VM) set_slot_bytes(slot int, const_bytes &u8, length usize) {
+pub fn (vm &VM) set_slot_bytes(slot int, const_bytes &u8, length uint) {
 	set_slot_bytes(vm, slot, const_bytes, length)
 }
 
@@ -132,7 +132,7 @@ pub fn (vm &VM) set_slot_double(slot int, value f64) {
 // call the allocator foreign method. In there, call this to create the object
 // and then the constructor will be invoked when the allocator returns.
 // Returns a pointer to the foreign object's data.
-pub fn (vm &VM) set_slot_new_foreign(slot int, class_slot int, size usize) voidptr {
+pub fn (vm &VM) set_slot_new_foreign(slot int, class_slot int, size uint) voidptr {
 	return set_slot_new_foreign(vm, slot, class_slot, size)
 }
 

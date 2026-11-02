@@ -2,11 +2,14 @@ module fontstash
 
 #flag -I @VMODROOT/thirdparty/fontstash
 #define FONTSTASH_IMPLEMENTATION
+
 $if gcboehm ? {
+	#include <gc.h>
 	#define FONTSTASH_MALLOC GC_MALLOC
 	#define FONTSTASH_REALLOC GC_REALLOC
 	#define FONTSTASH_FREE GC_FREE
 }
+
 #include "fontstash.h"
 #flag darwin -I/usr/local/Cellar/freetype/2.10.2/include/freetype2
 
@@ -42,7 +45,7 @@ pub fn delete_internal(s &Context) {
 // set_error_callback sets `callback` as a function to be called if fontstash
 // encounter any errors. `uptr` can be used to pass custom userdata.
 @[inline]
-pub fn (s &Context) set_error_callback(callback fn (voidptr, int, int), uptr voidptr) {
+pub fn (s &Context) set_error_callback(callback fn (voidptr, i32, i32), uptr voidptr) {
 	C.fonsSetErrorCallback(s, callback, uptr)
 }
 
