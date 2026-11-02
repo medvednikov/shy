@@ -3,16 +3,15 @@
 // that can be found in the LICENSE file.
 module analyse
 
-const hack = init()
+const hack = new_analysis()
 
-fn init() &Analysis {
+fn new_analysis() &Analysis {
 	$if !shy_analyse ? {
 		return unsafe { nil }
 	}
 	return &Analysis{}
 }
 
-@[if shy_analyse ?]
 struct Analysis {
 mut:
 	entries map[string]string

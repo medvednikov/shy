@@ -9,31 +9,31 @@ fn trace_allocation(message string) {
 	eprintln(message)
 }
 
-@[export: 'stbi__callback_malloc']
-fn cb_malloc(s usize) voidptr {
+@[markused]
+fn cb_malloc(s uint) voidptr {
 	mut res := unsafe { nil }
 	$if stbi_memory_no_gc ? {
 		res = unsafe { C.malloc(s) }
 	} $else {
-		res = unsafe { malloc(isize(s)) }
+		res = unsafe { malloc(int(s)) }
 	}
 	trace_allocation('> stbi__callback_malloc: ${s} => ${ptr_str(res)}')
 	return res
 }
 
-@[export: 'stbi__callback_realloc']
-fn cb_realloc(p voidptr, s usize) voidptr {
+@[markused]
+fn cb_realloc(p voidptr, s uint) voidptr {
 	mut res := unsafe { nil }
 	$if stbi_memory_no_gc ? {
 		res = unsafe { C.realloc(&u8(p), int(s)) }
 	} $else {
-		res = unsafe { v_realloc(p, isize(s)) }
+		res = unsafe { v_realloc(p, int(s)) }
 	}
 	trace_allocation('> stbi__callback_realloc: ${ptr_str(p)} , ${s} => ${ptr_str(res)}')
 	return res
 }
 
-@[export: 'stbi__callback_free']
+@[markused]
 fn cb_free(p voidptr) {
 	trace_allocation('> stbi__callback_free: ${ptr_str(p)}')
 	$if stbi_memory_no_gc ? {
@@ -48,7 +48,7 @@ fn cb_free(p voidptr) {
 #include "stb_image_write.h"
 #include "stb_image_resize.h"
 #include "stb_v_header.h"
-#flag @VMODROOT/thirdparty/stb/stbi.o
+#flag @VMODROOT/wraps/stbi/stbi_alloc.o
 
 pub struct Image {
 pub mut:
@@ -183,7 +183,7 @@ pub fn resize_uint8(img &Image, output_w int, output_h int) !Image {
 		use_channels: img.use_channels
 	}
 
-	res.data = cb_malloc(usize(output_w * output_h * img.use_channels))
+	res.data = cb_malloc(uint(output_w * output_h * img.use_channels))
 	if res.data == 0 {
 		return error('stbi_image failed to resize file')
 	}

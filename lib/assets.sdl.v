@@ -104,7 +104,7 @@ fn sdl_read_bytes_from_apk(source string) ![]u8 {
 		max_chunks_to_be_read := 1
 		mut total_chunks_read := 0
 		for {
-			chunks_read := rw.read(bytes.data, usize(chunks_per_read), usize(max_chunks_to_be_read))
+			chunks_read := rw.read(bytes.data, uint(chunks_per_read), uint(max_chunks_to_be_read))
 			total_chunks_read += int(chunks_read)
 			if chunks_read <= 0 {
 				break

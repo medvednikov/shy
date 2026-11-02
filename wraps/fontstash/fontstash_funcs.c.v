@@ -4,7 +4,7 @@ module fontstash
 fn C.fonsCreateInternal(params &C.FONSparams) &C.FONScontext
 fn C.fonsDeleteInternal(s &C.FONScontext)
 
-fn C.fonsSetErrorCallback(s &C.FONScontext, callback fn (voidptr, int, int), uptr voidptr)
+fn C.fonsSetErrorCallback(s &C.FONScontext, callback fn (voidptr, i32, i32), uptr voidptr)
 
 // Returns current atlas size.
 fn C.fonsGetAtlasSize(s &C.FONScontext, width &int, height &int)

@@ -108,7 +108,7 @@ fn (w Window) dump_pixels(rect Rect) &Screenshot {
 	img_height := int(rect.height)
 	img_size := img_width * img_height * 4
 	img_pixels := unsafe { &u8(malloc(img_size)) }
-	C.shy_gl_read_rgba_pixels(rect.x, rect.y, img_width, img_height, img_pixels)
+	C.shy_gl_read_rgba_pixels(int(rect.x), int(rect.y), img_width, img_height, img_pixels)
 	return &Screenshot{
 		width:  img_width
 		height: img_height

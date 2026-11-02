@@ -9,7 +9,7 @@ const max_iconimages = 8
 pub struct C.sapp_range {
 pub:
 	ptr  voidptr
-	size usize
+	size uint
 }
 
 pub type Range = C.sapp_range

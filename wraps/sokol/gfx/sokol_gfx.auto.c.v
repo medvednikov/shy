@@ -79,7 +79,7 @@ pub type Attachments = C.sg_attachments
 pub struct C.sg_range {
 pub mut:
 	ptr  voidptr
-	size usize
+	size uint
 }
 
 pub type Range = C.sg_range
@@ -183,8 +183,8 @@ pub enum PixelFormat {
 	bc6h_rgbuf      = C.SG_PIXELFORMAT_BC6H_RGBUF
 	bc7_rgba        = C.SG_PIXELFORMAT_BC7_RGBA
 	bc7_srgba       = C.SG_PIXELFORMAT_BC7_SRGBA
-	pvrtc_rgb_2bpp  = C.SG_PIXELFORMAT_PVRTC_RGB_2BPP  // FIXME: deprecated
-	pvrtc_rgb_4bpp  = C.SG_PIXELFORMAT_PVRTC_RGB_4BPP  // FIXME: deprecated
+	pvrtc_rgb_2bpp  = C.SG_PIXELFORMAT_PVRTC_RGB_2BPP // FIXME: deprecated
+	pvrtc_rgb_4bpp  = C.SG_PIXELFORMAT_PVRTC_RGB_4BPP // FIXME: deprecated
 	pvrtc_rgba_2bpp = C.SG_PIXELFORMAT_PVRTC_RGBA_2BPP // FIXME: deprecated
 	pvrtc_rgba_4bpp = C.SG_PIXELFORMAT_PVRTC_RGBA_4BPP // FIXME: deprecated
 	etc2_rgb8       = C.SG_PIXELFORMAT_ETC2_RGB8
@@ -344,7 +344,7 @@ pub enum PrimitiveType as u32 {
 // Filter is C.sg_filter
 pub enum Filter as u32 {
 	_default   = C._SG_FILTER_DEFAULT // value 0 reserved for default-init
-	@none      = C.SG_FILTER_NONE     // FIXME: deprecated
+	@none      = C.SG_FILTER_NONE // FIXME: deprecated
 	nearest    = C.SG_FILTER_NEAREST
 	linear     = C.SG_FILTER_LINEAR
 	_num       = C._SG_FILTER_NUM
@@ -424,8 +424,8 @@ pub enum UniformType as u32 {
 // UniformLayout is C.sg_uniform_layout
 pub enum UniformLayout as u32 {
 	_default   = C._SG_UNIFORMLAYOUT_DEFAULT // value 0 reserved for default-init
-	native     = C.SG_UNIFORMLAYOUT_NATIVE   // default: layout depends on currently active backend
-	std140     = C.SG_UNIFORMLAYOUT_STD140   // std140: memory layout according to std140
+	native     = C.SG_UNIFORMLAYOUT_NATIVE // default: layout depends on currently active backend
+	std140     = C.SG_UNIFORMLAYOUT_STD140 // std140: memory layout according to std140
 	_num       = C._SG_UNIFORMLAYOUT_NUM
 	_force_u32 = C._SG_UNIFORMLAYOUT_FORCE_U32 // 0x7FFFFFFF,
 }
@@ -513,23 +513,23 @@ pub enum BlendOp as u32 {
 
 // ColorMask is C.sg_color_mask
 pub enum ColorMask as u32 {
-	_default   = C._SG_COLORMASK_DEFAULT   // 0, value 0 reserved for default-init
-	@none      = C.SG_COLORMASK_NONE       // 0x10, special value for 'all channels disabled
-	r          = C.SG_COLORMASK_R          // 0x1,
-	g          = C.SG_COLORMASK_G          // 0x2,
-	rg         = C.SG_COLORMASK_RG         // 0x3,
-	b          = C.SG_COLORMASK_B          // 0x4,
-	rb         = C.SG_COLORMASK_RB         // 0x5,
-	gb         = C.SG_COLORMASK_GB         // 0x6,
-	rgb        = C.SG_COLORMASK_RGB        // 0x7,
-	a          = C.SG_COLORMASK_A          // 0x8,
-	ra         = C.SG_COLORMASK_RA         // 0x9,
-	ga         = C.SG_COLORMASK_GA         // 0xA,
-	rga        = C.SG_COLORMASK_RGA        // 0xB,
-	ba         = C.SG_COLORMASK_BA         // 0xC,
-	rba        = C.SG_COLORMASK_RBA        // 0xD,
-	gba        = C.SG_COLORMASK_GBA        // 0xE,
-	rgba       = C.SG_COLORMASK_RGBA       // 0xF,
+	_default   = C._SG_COLORMASK_DEFAULT // 0, value 0 reserved for default-init
+	@none      = C.SG_COLORMASK_NONE // 0x10, special value for 'all channels disabled
+	r          = C.SG_COLORMASK_R // 0x1,
+	g          = C.SG_COLORMASK_G // 0x2,
+	rg         = C.SG_COLORMASK_RG // 0x3,
+	b          = C.SG_COLORMASK_B // 0x4,
+	rb         = C.SG_COLORMASK_RB // 0x5,
+	gb         = C.SG_COLORMASK_GB // 0x6,
+	rgb        = C.SG_COLORMASK_RGB // 0x7,
+	a          = C.SG_COLORMASK_A // 0x8,
+	ra         = C.SG_COLORMASK_RA // 0x9,
+	ga         = C.SG_COLORMASK_GA // 0xA,
+	rga        = C.SG_COLORMASK_RGA // 0xB,
+	ba         = C.SG_COLORMASK_BA // 0xC,
+	rba        = C.SG_COLORMASK_RBA // 0xD,
+	gba        = C.SG_COLORMASK_GBA // 0xE,
+	rgba       = C.SG_COLORMASK_RGBA // 0xF,
 	_force_u32 = C._SG_COLORMASK_FORCE_U32 // 0x7FFFFFFF,
 }
 
@@ -684,7 +684,7 @@ pub type Bindings = C.sg_bindings
 pub struct C.sg_buffer_desc {
 pub mut:
 	_start_canary u32
-	size          usize
+	size          uint
 	@type         BufferType
 	usage         Usage
 	data          Range
@@ -757,7 +757,6 @@ pub mut:
 	label          &char = unsafe { nil }
 	// optionally inject backend-specific resources
 	//
-
 	gl_sampler    u32
 	mtl_sampler   voidptr
 	d3d11_sampler voidptr
@@ -788,7 +787,7 @@ pub type ShaderUniformDesc = C.sg_shader_uniform_desc
 @[typedef]
 pub struct C.sg_shader_uniform_block_desc {
 pub mut:
-	size   usize
+	size   uint
 	layout UniformLayout
 	// TODO 	uniforms [SG_MAX_UB_MEMBERS]ShaderUniformDesc
 }
@@ -1323,7 +1322,6 @@ pub mut:
 	frame_index u32
 	// current frame counter, starts at 0 uint32_t num_passes
 	//
-
 	num_apply_viewport     u32
 	num_apply_scissor_rect u32
 	num_apply_pipeline     u32
@@ -1416,8 +1414,8 @@ pub type CommitListener = C.sg_commit_listener
 @[typedef]
 pub struct C.sg_allocator {
 pub mut:
-	alloc_fn  fn (size usize, user_data voidptr) voidptr // size,
-	free_fn   fn (ptr voidptr, user_data voidptr)        // ptr,
+	alloc_fn  fn (size uint, user_data voidptr) voidptr // size,
+	free_fn   fn (ptr voidptr, user_data voidptr)       // ptr,
 	user_data voidptr
 }
 
@@ -1670,10 +1668,10 @@ pub fn query_buffer_overflow(buf Buffer) bool {
 }
 
 // C: `SOKOL_GFX_API_DECL bool sg_query_buffer_will_overflow(sg_buffer buf, size_t size)`
-fn C.sg_query_buffer_will_overflow(buf Buffer, size usize) bool
+fn C.sg_query_buffer_will_overflow(buf Buffer, size uint) bool
 
 // query_buffer_will_overflow is currently undocumented
-pub fn query_buffer_will_overflow(buf Buffer, size usize) bool {
+pub fn query_buffer_will_overflow(buf Buffer, size uint) bool {
 	return C.sg_query_buffer_will_overflow(buf, size)
 }
 
